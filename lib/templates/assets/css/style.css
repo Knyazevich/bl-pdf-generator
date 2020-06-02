@@ -1,0 +1,44 @@
+.pdf {
+  border: 1px solid lightblue;
+  font-family: TT Norms, sans-serif;
+}
+
+.pdf__header.header {
+  position: relative;
+}
+
+.header__image {
+  width: 100%;
+}
+
+.header__company-logo-wrapper {
+  background-color: #fff;
+  width: 15%;
+  height: 69px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__company-logo {
+  width: 70%;
+  height: auto;
+}
+
+.variations-short-data__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.variations-short-data__table {
+  margin: 50px 0;
+  width: 100%;
+}
+
+.variations-short-data__table tr {
+  background-color: #ddd;
+}

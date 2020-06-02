@@ -1,0 +1,40 @@
+{
+  "private": true,
+  "name": "mst-bl-pdf-generator",
+  "author": "Pavlo Kniazevych",
+  "description": "PDF generator for bl.is",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankur20us/demo-puppeteer.git"
+  },
+  "scripts": {
+    "start": "tsc lib/index.ts",
+    "build-ts": "tsc",
+    "watch-ts": "tsc -w",
+    "serve": "npm run eslint:fix && npm run build-ts && node dist/index.js",
+    "eslint": "eslint ./lib/**/*.ts",
+    "eslint:fix": "eslint ./lib/**/*.ts --fix"
+  },
+  "version": "1.0.0",
+  "dependencies": {
+    "@hapi/hapi": "^19.1.1",
+    "@types/handlebars": "^4.1.0",
+    "@types/hapi__hapi": "^19.0.3",
+    "@types/node": "^14.0.9",
+    "@types/puppeteer": "^3.0.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.1.0",
+    "fs-extra": "^7.0.1",
+    "handlebars": "^4.7.6",
+    "puppeteer": "^1.20.0",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "eslint-config-airbnb-typescript": "^7.2.1",
+    "eslint-plugin-import": "^2.20.2"
+  }
+}

@@ -1,0 +1,30 @@
+env:
+  browser: false
+  es6: true
+  jquery: false
+  jest: true
+extends:
+  ['airbnb-typescript/base']
+globals:
+  Atomics: readonly
+  SharedArrayBuffer: readonly
+parserOptions:
+  project: './tsconfig.json'
+  ecmaVersion: 2020
+  sourceType: module
+rules:
+  no-underscore-dangle: 0
+  no-restricted-globals: 0
+  no-restricted-syntax: 0
+  no-new: 0
+  no-alert: 0
+  class-methods-use-this: 0
+  no-useless-constructor: 0
+  no-param-reassign: 0
+  prefer-destructuring: 0
+  no-unused-expressions: 0
+  max-len: ['error', 120]
+  consistent-return: 0
+  linebreak-style: ["error", "unix"]
+  '@typescript-eslint/no-unused-expressions': 0
+
