@@ -1,8 +1,17 @@
 import Hapi from '@hapi/hapi';
+import Inert from '@hapi/inert';
+import path from 'path';
 import Logger from './class.Logger';
+import ModelPDF from './class.ModelPDF';
 
 class Server {
   private server: Hapi.Server;
+
+  private readonly rootPath: string;
+
+  constructor() {
+    this.rootPath = path.dirname(require.main.filename);
+  }
 
   public async run() {
     const l = new Logger();
@@ -14,7 +23,8 @@ class Server {
 
       l.log('good', 'Server started');
     } catch (e) {
-      l.log('error', e);
+      l.log('error', JSON.stringify(e));
+      process.exit(1);
     }
   }
 
@@ -26,12 +36,32 @@ class Server {
   }
 
   private async setRoutes() {
+    console.log(`${this.rootPath}/templates/{file*}`);
+
+    await this.server.register(Inert);
+
     await this.server.route([
       {
         method: 'GET',
         path: '/modelPDF/',
-        handler(req: Hapi.Request) {
-          return JSON.stringify(req.query);
+        handler: async (req: Hapi.Request, h: Hapi.ResponseToolkit) => {
+          const pdf = new ModelPDF();
+          const buffer = await pdf.generate(req.query);
+
+          return h.response(buffer)
+            .type('application/pdf')
+            .encoding('utf8')
+            .header('Content-Disposition', 'attachment;filename=model.pdf');
+        },
+      },
+      {
+        method: 'GET',
+        path: '/public/{file*}',
+        handler: {
+          directory: {
+            path: `${this.rootPath}/templates/`,
+            listing: true,
+          },
         },
       },
     ]);
@@ -40,9 +70,6 @@ class Server {
   private async start() {
     await this.server.register({
       plugin: require('hapi-cors'), // eslint-disable-line
-      options: {
-        origins: [process.env.ALLOWED_HOST],
-      },
     });
 
     await this.server.start();

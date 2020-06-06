@@ -4,10 +4,10 @@ import * as os from 'os';
 import Logger from './class.Logger';
 
 class FS {
-  public static createFile(filePath: string) {
+  public static createFile(filePath: string, data?: any) {
     try {
       if (!fs.existsSync(filePath)) {
-        fs.writeFile(filePath, null, (e) => {
+        fs.writeFile(filePath, data, (e) => {
           if (e) throw e;
         });
       }

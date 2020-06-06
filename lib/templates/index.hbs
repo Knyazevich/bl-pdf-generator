@@ -1,83 +1,980 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="is">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <title>PDF</title>
+  <title>Document</title>
+  <link rel="stylesheet" href="{{assetsPath}}/css/style.css">
 </head>
-<body class="pdf">
-<main class="pdf__pages">
-  <header class="pdf__header header">
-    <img src="https://vel.bl.is/uploads/_/originals/93.jpg" alt="" class="header__image">
-    <div class="header__company-logo-wrapper">
-      <img src="https://vel.bl.is/uploads/_/originals/renault.svg" alt="" class="header__company-logo">
+<body>
+<div class="main-content">
+  <div class="hero-banner">
+    <div class="hero-banner__title-box">
+      <h1 class="hero-banner__title">
+        <span class="hero-banner__title--red">NÝR</span> <br>
+        <span>RENAULT</span> <br>
+        <span>CLIO V</span>
+      </h1>
     </div>
-  </header>
+  </div>
 
-  <section class="variations-short-data">
-    <div class="variations-short-data__header">
-      <h1 class="title variations-short-data__title">RENAULT CLIO V</h1>
-      <p class="last-update">Verðlisti Maí 2020</p>
-    </div>
-
-    <table class="variations-short-data__table">
-      <thead>
-      <tr>
-        <th>Tegund</th>
-        <th>Stærð vélar</th>
-        <th>Eldsneyti</th>
-        <th>Hestöfl</th>
-        <th>Skipting</th>
-        <th>Drif</th>
-        <th>Eyðsla/bl.*</th>
-        <th>Verð</th>
-        <th>90% lán*</th>
+  <div class="table-container">
+    <table class="auto-info-table">
+      <thead class="auto-info-table__header">
+      <tr class="auto-info-table__header-row">
+        <th class="auto-info-table__header-title">Gerð</th>
+        <th class="auto-info-table__header-title">Orkugjafi</th>
+        <th class="auto-info-table__header-title">Skipting</th>
+        <th class="auto-info-table__header-title">Skipting</th>
+        <th class="auto-info-table__header-title">Eyðsla/bl.*</th>
+        <th class="auto-info-table__header-title">Hestöfl</th>
+        <th class="auto-info-table__header-title">Co2</th>
+        <th class="auto-info-table__header-title">Verð</th>
+        <th class="auto-info-table__header-title">90% lán*</th>
       </tr>
       </thead>
 
-      <tr>
-        <td>Clio Zen tce</td>
-        <td>1500 cc</td>
-        <td>Dísil</td>
-        <td>110</td>
-        <td>Beinsk.</td>
-        <td>Framhjóladrif</td>
-        <td>3,7L</td>
-        <td>3.890.000 kr.</td>
-        <td>54.779 kr.</td>
+      <tbody class="auto-info-table__main">
+      <tr class="auto-info-table__main-row">
+        <td class="auto-info-table__main-cell">Zen</td>
+        <td class="auto-info-table__main-cell"><span>1000</span> cc</td>
+        <td class="auto-info-table__main-cell">Bensín</td>
+        <td class="auto-info-table__main-cell">Beinsk.</td>
+        <td class="auto-info-table__main-cell">5,2 l/100</td>
+        <td class="auto-info-table__main-cell">100</td>
+        <td class="auto-info-table__main-cell">100</td>
+        <td class="auto-info-table__main-cell"><span>2.990.000</span> <span>kr.</span></td>
+        <td class="auto-info-table__main-cell"><span>42.183</span> <span>kr.</span></td>
       </tr>
 
-      <tr>
-        <td>Clio Intens EDC</td>
-        <td>1500 cc</td>
-        <td>Dísil</td>
-        <td>110</td>
-        <td>Beinsk.</td>
-        <td>Framhjóladrif</td>
-        <td>3,7L</td>
-        <td>3.890.000 kr.</td>
-        <td>54.779 kr.</td>
+      <tr class="auto-info-table__main-row">
+        <td class="auto-info-table__main-cell">Intense</td>
+        <td class="auto-info-table__main-cell"><span>1200</span> cc</td>
+        <td class="auto-info-table__main-cell">Bensín</td>
+        <td class="auto-info-table__main-cell">Sjálfsk.</td>
+        <td class="auto-info-table__main-cell">5,8 l/100</td>
+        <td class="auto-info-table__main-cell">100</td>
+        <td class="auto-info-table__main-cell">100</td>
+        <td class="auto-info-table__main-cell"><span>3.350.000</span> <span>kr.</span></td>
+        <td class="auto-info-table__main-cell"><span>47.227</span> <span>kr.</span></td>
       </tr>
 
-      <tr>
-        <td>Clien RS Line EDC</td>
-        <td>1500 cc</td>
-        <td>Dísil</td>
-        <td>110</td>
-        <td>Beinsk.</td>
-        <td>Framhjóladrif</td>
-        <td>3,7L</td>
-        <td>3.890.000 kr.</td>
-        <td>54.779 kr.</td>
+      <tr class="auto-info-table__main-row">
+        <td class="auto-info-table__main-cell">RS Line 4WD</td>
+        <td class="auto-info-table__main-cell"><span>1600</span> cc</td>
+        <td class="auto-info-table__main-cell">Dísil</td>
+        <td class="auto-info-table__main-cell">Beinsk.</td>
+        <td class="auto-info-table__main-cell">4,1 l/100</td>
+        <td class="auto-info-table__main-cell">85</td>
+        <td class="auto-info-table__main-cell">85</td>
+        <td class="auto-info-table__main-cell"><span>3.390.000</span> <span>kr.</span></td>
+        <td class="auto-info-table__main-cell"><span>47.781</span> <span>kr.</span></td>
       </tr>
-
+      </tbody>
     </table>
+  </div>
+
+  <div class="table-container">
+    <table class="auto-info-table">
+      <thead class="auto-info-table__header">
+      <tr class="auto-info-table__header-row">
+        <th class="auto-info-table__header-title">Gerð</th>
+        <th class="auto-info-table__header-title">Orkugjafi</th>
+        <th class="auto-info-table__header-title">Skipting</th>
+        <th class="auto-info-table__header-title">Skipting</th>
+        <th class="auto-info-table__header-title">Eyðsla/bl.*</th>
+        <th class="auto-info-table__header-title">Hestöfl</th>
+        <th class="auto-info-table__header-title">Drægi</th>
+        <th class="auto-info-table__header-title">Verð</th>
+        <th class="auto-info-table__header-title">90% lán*</th>
+      </tr>
+      </thead>
+
+      <tbody class="auto-info-table__main">
+      <tr class="auto-info-table__main-row">
+        <td class="auto-info-table__main-cell">
+              <span class="bage eco-bage">
+                <img src="{{assetsPath}}/img/eco-bage.svg" alt="" class="bage-image">
+              </span>
+          Zen 4WD
+        </td>
+        <td class="auto-info-table__main-cell"><span>1000</span> cc</td>
+        <td class="auto-info-table__main-cell">Plug-in Hybrid</td>
+        <td class="auto-info-table__main-cell">Beinsk.</td>
+        <td class="auto-info-table__main-cell">4,1 l/100</td>
+        <td class="auto-info-table__main-cell">100</td>
+        <td class="auto-info-table__main-cell"><span>50</span> km.</td>
+        <td class="auto-info-table__main-cell"><span>2.990.000</span> <span>kr.</span></td>
+        <td class="auto-info-table__main-cell"><span>42.183</span> <span>kr.</span></td>
+      </tr>
+
+      <tr class="auto-info-table__main-row">
+        <td class="auto-info-table__main-cell">
+              <span class="bage eco-bage">
+                <img src="{{assetsPath}}/img/eco-bage.svg" alt="" class="bage-image">
+              </span>
+          Comfort
+        </td>
+        <td class="auto-info-table__main-cell"><span>1200</span> cc</td>
+        <td class="auto-info-table__main-cell">Dísil Hybrid</td>
+        <td class="auto-info-table__main-cell">Sjálfsk.</td>
+        <td class="auto-info-table__main-cell">5,1 l/100</td>
+        <td class="auto-info-table__main-cell">85</td>
+        <td class="auto-info-table__main-cell"><span>55</span> km.</td>
+        <td class="auto-info-table__main-cell"><span>3.350.000</span> <span>kr.</span></td>
+        <td class="auto-info-table__main-cell"><span>47.781</span> <span>kr.</span></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <section class="equipment">
+    <h2 class="secondary-title secondary__title--margin">
+      <span class="dark-blue">Staðalbúnaður</span>
+      <span class="light-blue">Zen</span>
+    </h2>
+
+    <div class="list-wrapper">
+      <ul class="equipment__list">
+        <div class="list-category">
+          <h3 class="third-title">Öryggi</h3>
+          <li class="equipment__list-item">Akreinastýring</li>
+          <li class="equipment__list-item">Akreinavari</li>
+          <li class="equipment__list-item">Sjálfvirk neyðarhemlun</li>
+          <li class="equipment__list-item">Brekkuaðstoð (HSA)</li>
+          <li class="equipment__list-item">Hemlar með læsivörn (ABS)</li>
+          <li class="equipment__list-item">Eco ökuhamur</li>
+          <li class="equipment__list-item">Start/Stop búnaður</li>
+          <li class="equipment__list-item">Dekkjaþrýstingsskynjarar (TPMS)</li>
+          <li class="equipment__list-item">Farþegaloftpúði aftengjanlegur</li>
+          <li class="equipment__list-item">Gardínuloftpúðar</li>
+          <li class="equipment__list-item">Hliðarloftpúðar</li>
+          <li class="equipment__list-item">Hnéloftpúðar</li>
+          <li class="equipment__list-item">Skriðvörn</li>
+          <li class="equipment__list-item">Spólvörn</li>
+          <li class="equipment__list-item">Barnalæsingar á afturhurðum</li>
+          <li class="equipment__list-item">ISOFIX barnastólafestingar</li>
+          <li class="equipment__list-item">Áminningarljós fyrir hurðir</li>
+          <li class="equipment__list-item">Áminningarljós fyrir öryggisbelti</li>
+          <li class="equipment__list-item">Verndarbúnaður fyrir vegfarendur</li>
+          <li class="equipment__list-item">Hæðanstillanleg öryggisbelti að framan</li>
+        </div>
+
+        <div class="list-category">
+          <h3 class="third-title equipment__list-title">Ytra byrði</h3>
+          <li class="equipment__list-item">16" Stálfelgur</li>
+          <li class="equipment__list-item">Viðgerðarsett fyrir hjólbarða</li>
+          <li class="equipment__list-item">Rafdrifnar rúður framan</li>
+          <li class="equipment__list-item">Rafdrifnir hliðarspeglar</li>
+          <li class="equipment__list-item">Sjálfvirkir aðfellanlegir hliðarspeglar</li>
+          <li class="equipment__list-item">Upphitaðir hliðarspeglar </li>
+          <li class="equipment__list-item">LED afturljós</li>
+          <li class="equipment__list-item">LED dagljós</li>
+          <li class="equipment__list-item">LED stöðuljós</li>
+          <li class="equipment__list-item">LED stefnuljós</li>
+          <li class="equipment__list-item">Króm á grilli</li>
+          <li class="equipment__list-item">Samlita speglar</li>
+        </div>
+
+        <div class="list-category">
+          <h3 class="third-title equipment__list-title">Tækni og þægindi</h3>
+          <li class="equipment__list-item">Fjarlægðarskynjarar aftan</li>
+          <li class="equipment__list-item">Fjarlægðarskynjarar framan</li>
+          <li class="equipment__list-item">Android Auto™</li>
+          <li class="equipment__list-item">Apple Car play™</li>
+          <li class="equipment__list-item">AUX tengi</li>
+          <li class="equipment__list-item">Bluetooth tengimöguleikar</li>
+          <li class="equipment__list-item">Samþætting við snjallsíma​</li>
+          <li class="equipment__list-item">​5,8” snertiskjár</li>
+        </div>
+
+        <div class="list-category">
+          <h3 class="third-title equipment__list-title">Innri byrði</h3>
+          <li class="equipment__list-item">Barnalæsing á afturhurðum</li>
+          <li class="equipment__list-item">40:20:40 niðurfellanleg sætisbök</li>
+          <li class="equipment__list-item">Baksýnisspegill með sjálfvirkri skyggingu</li>
+          <li class="equipment__list-item">Armpúði í framsætum</li>
+          <li class="equipment__list-item">Upphituð framsæti</li>
+          <li class="equipment__list-item">Spegill í sólskyggni</li>
+          <li class="equipment__list-item">Loftkæling</li>
+          <li class="equipment__list-item">Aðgerðarstýri</li>
+          <li class="equipment__list-item">Aðdráttar og veltistýri</li>
+          <li class="equipment__list-item">Veltistýri</li>
+        </div>
+      </ul>
+    </div>
   </section>
 
-  <footer class="pdf__footer footer">
-    <div class="footer__logo">
-      <img src="./assets/img/logo.svg" alt="" class="footer__logo-image">
+  <section class="extra-in-intens equipment">
+    <h2 class="secondary-title secondary__title--margin">
+      <span class="dark-blue">Aukalega í</span>
+      <span class="light-blue">Intens</span>
+    </h2>
+
+    <div class="list-wrapper">
+      <ul class="equipment__list">
+        <div class="list-category">
+          <li class="equipment__list-item">Eco ökuhamur</li>
+          <li class="equipment__list-item">Mismunandi akstursstillingar</li>
+          <li class="equipment__list-item">16" Álfelgur</li>
+          <li class="equipment__list-item">Regnskynjari</li>
+          <li class="equipment__list-item">Rafdrifnar rúður</li>
+          <li class="equipment__list-item">LED aðalljós</li>
+          <li class="equipment__list-item">Sjálfvirk há/lág ljós (High beam assist)</li>
+          <li class="equipment__list-item">Þokuljós að aftan</li>
+          <li class="equipment__list-item">Króm umgjörð á rúðum</li>
+          <li class="equipment__list-item">Hæðastillanlegt farþegasæti</li>
+          <li class="equipment__list-item">Leðurklæddur gírhnúði</li>
+          <li class="equipment__list-item">Dynamic innrétting</li>
+          <li class="equipment__list-item">Sjálfvirk miðstöð</li>
+        </div>
+      </ul>
     </div>
+  </section>
+
+  <footer class="inner-footer">
+    <div class="product-info">
+      <div class="qr-code">
+        <img src="{{assetsPath}}/img/QR-code.png" alt="QR-code">
+      </div>
+
+      <div class="product-info__desc">
+        <h1 class="first-title inner-footer__title inner-footer__title--margin">
+          <span class="dark-blue">NÝR RENAULT</span>
+          <span class="light-blue">CLIO V</span>
+        </h1>
+        <div class="product-info__desc-text-box">
+          <p class="product-info__desc-text product-info__desc-text--margin">Verðlisti Maí 2020</p>
+          <p class="product-info__desc-text product-info__desc-text--margin">Skannaðu þennan QR kóða til að fá meiri upplýsingar</p>
+        </div>
+      </div>
+    </div>
+
+    <address class="inner-footer__contacts">
+      <div class="inner-footer__contacts-box">
+        <h2 class="inner-footer__contact-title inner-footer__contact-title--margin">BL ehf.</h2>
+        <p class="inner-footer__contact-text inner-footer__contact-text--margin">Sævarhöfða 2 / 110 Reykjavík</p>
+        <a class="inner-footer__contact-link" href="tel:525-8000">525-8000</a>
+        <span>/</span>
+        <a class="inner-footer__contact-link" href="www.bl.is">www.bl.is</a>
+      </div>
+      <div class="logo">
+        <img src="{{assetsPath}}/img/logo.svg" alt="">
+      </div>
+    </address>
   </footer>
-</main>
+</div>
+
+<div class="main-content">
+  <section class="extra-in-intens equipment">
+    <h2 class="secondary-title secondary__title--margin">
+      <span class="dark-blue">Aukalega í</span>
+      <span class="light-blue">Intens</span>
+    </h2>
+
+    <div class="list-wrapper">
+      <ul class="equipment__list">
+        <div class="list-category">
+          <li class="equipment__list-item">Stillanleg stemmningslýsing í innréttingu</li>
+          <li class="equipment__list-item">Hiti í stýri</li>
+          <li class="equipment__list-item">Leðurklætt stýri</li>
+          <li class="equipment__list-item">Leður á slitflötum</li>
+          <li class="equipment__list-item">Lyklalaust aðgengi</li>
+          <li class="equipment__list-item">Leiðsögukerfi með Íslandskorti​</li>
+          <li class="equipment__list-item">7" upplýsingaskjár í mælaborði</li>
+        </div>
+      </ul>
+    </div>
+  </section>
+
+  <section class="extra-in-intens equipment">
+    <h2 class="secondary-title secondary__title--margin">
+      <span class="dark-blue">Aukalega í</span>
+      <span class="light-blue">RS útgáfu</span>
+    </h2>
+
+    <div class="list-wrapper">
+      <ul class="equipment__list">
+        <div class="list-category">
+          <li class="equipment__list-item">Eco ökuhamur</li>
+          <li class="equipment__list-item">Mismunandi akstursstillingar</li>
+          <li class="equipment__list-item">17" Álfelgur</li>
+          <li class="equipment__list-item">Armpúði í aftursætum</li>
+          <li class="equipment__list-item">ÁL Pedalar</li>
+          <li class="equipment__list-item">GT Innrétting</li>
+          <li class="equipment__list-item">Leðuráklæði</li>
+          <li class="equipment__list-item">Sportsæti</li>
+        </div>
+      </ul>
+    </div>
+  </section>
+
+  <section class="accessories">
+    <h1 class="primary-title primary-title--margin dark-blue accessories__title">AUKAHLUTIR</h1>
+    <div class="accessories__main-img-box">
+      <img class="accessories__main-img" src="{{assetsPath}}/img/gallery-main-img.png" alt="Renualt Clio 5, 'Valencia orange' color">
+    </div>
+    <div class="accessories__info-wrapper">
+      <h2 class="secondary-title secondary-title--margin dark-blue">Aukahlutapakkar</h2>
+      <div class="accessories__info-box">
+        <h3 class="third-title dark-black">Kynningarpakki</h3>
+        <p class="accessories__desc accessories__desc--margin">
+          (Aurhlífar, skottmotta snúanleg, hlíf á afturstuðara, upplýst innstigsvörn, gluggahlífar)
+        </p>
+        <p class="price price--margin">
+          <span>99.000</span>
+          <span>kr.</span>
+        </p>
+      </div>
+
+      <div class="accessories__info-box">
+        <h3 class="third-title dark-black">Aukahlutapakkar</h3>
+        <p class="accessories__desc accessories__desc--margin">
+          (Aurhlífar, skottmotta snúanleg, hlíf á afturstuðara, upplýst innstigsvörn, gluggahlífar)
+        </p>
+        <p class="price price--margin">
+          <span>95.000</span>
+          <span>kr.</span>
+        </p>
+      </div>
+
+      <div class="accessories__info-box">
+        <h3 class="third-title dark-black">Aukahlutapakkar</h3>
+        <p class="accessories__desc accessories__desc--margin">
+          (Aurhlífar, skottmotta snúanleg, hlíf á afturstuðara, upplýst innstigsvörn, gluggahlífar)
+        </p>
+        <p class="price price--margin">
+          <span>95.000</span>
+          <span>kr.</span>
+        </p>
+      </div>
+
+      <div class="accessories__info-box">
+        <h3 class="third-title dark-black">Aukahlutapakkar</h3>
+        <p class="accessories__desc accessories__desc--margin">
+          (Aurhlífar, skottmotta snúanleg, hlíf á afturstuðara, upplýst innstigsvörn, gluggahlífar)
+        </p>
+        <p class="price price--margin">
+          <span>95.000</span>
+          <span>kr.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="accessories__gallery-wrapper">
+      <ul class="accessories__gallery-list">
+        <li class="accessories__gallery-item">
+          <div class="accessories__gallery-img-box">
+            <img src="{{assetsPath}}/img/gallery-img-1.png" alt="">
+          </div>
+          <h3 class="third-title dark-blue">Álfelgur Nucelus (4 stk)</h3>
+          <p class="price price--margin">
+            <span>39.000</span>
+            <span>kr.</span>
+          </p>
+        </li>
+
+        <li class="accessories__gallery-item">
+          <div class="accessories__gallery-img-box">
+            <img src="{{assetsPath}}/img/gallery-img-2.png" alt="">
+          </div>
+          <h3 class="third-title dark-blue">Álfelgur Nucelus (4 stk)</h3>
+          <p class="price price--margin">
+            <span>39.000</span>
+            <span>kr.</span>
+          </p>
+        </li>
+
+        <li class="accessories__gallery-item">
+          <div class="accessories__gallery-img-box">
+            <img src="{{assetsPath}}/img/gallery-img-3.png" alt="">
+          </div>
+          <h3 class="third-title dark-blue">Álfelgur Nucelus (4 stk)</h3>
+          <p class="price price--margin">
+            <span>39.000</span>
+            <span>kr.</span>
+          </p>
+        </li>
+
+        <li class="accessories__gallery-item">
+          <div class="accessories__gallery-img-box">
+            <img src="{{assetsPath}}/img/gallery-img-4.png" alt="">
+          </div>
+          <h3 class="third-title dark-blue">Álfelgur Nucelus (4 stk)</h3>
+          <p class="price price--margin">
+            <span>39.000</span>
+            <span>kr.</span>
+          </p>
+        </li>
+
+        <li class="accessories__gallery-item">
+          <div class="accessories__gallery-img-box">
+            <img src="{{assetsPath}}/img/gallery-img-5.png" alt="">
+          </div>
+          <h3 class="third-title dark-blue">Álfelgur Nucelus (4 stk)</h3>
+          <p class="price price--margin">
+            <span>39.000</span>
+            <span>kr.</span>
+          </p>
+        </li>
+
+        <li class="accessories__gallery-item">
+          <div class="accessories__gallery-img-box">
+            <img src="{{assetsPath}}/img/gallery-img-6.png" alt="">
+          </div>
+          <h3 class="third-title dark-blue">Álfelgur Nucelus (4 stk)</h3>
+          <p class="price price--margin">
+            <span>39.000</span>
+            <span>kr.</span>
+          </p>
+        </li>
+
+        <li class="accessories__gallery-item">
+          <div class="accessories__gallery-img-box">
+            <img src="{{assetsPath}}/img/gallery-img-7.png" alt="">
+          </div>
+          <h3 class="third-title dark-blue">Álfelgur Nucelus (4 stk)</h3>
+          <p class="price price--margin">
+            <span>39.000</span>
+            <span>kr.</span>
+          </p>
+        </li>
+
+        <li class="accessories__gallery-item">
+          <div class="accessories__gallery-img-box">
+            <img src="{{assetsPath}}/img/gallery-img-8.png" alt="">
+          </div>
+          <h3 class="third-title dark-blue">Álfelgur Nucelus (4 stk)</h3>
+          <p class="price price--margin">
+            <span>39.000</span>
+            <span>kr.</span>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="inner-footer">
+    <div class="product-info">
+      <div class="qr-code">
+        <img src="{{assetsPath}}/img/QR-code.png" alt="QR-code">
+      </div>
+
+      <div class="product-info__desc">
+        <h1 class="first-title inner-footer__title inner-footer__title--margin">
+          <span class="dark-blue">NÝR RENAULT</span>
+          <span class="light-blue">CLIO V</span>
+        </h1>
+        <div class="product-info__desc-text-box">
+          <p class="product-info__desc-text product-info__desc-text--margin">Verðlisti Maí 2020</p>
+          <p class="product-info__desc-text product-info__desc-text--margin">Skannaðu þennan QR kóða til að fá meiri upplýsingar</p>
+        </div>
+      </div>
+    </div>
+
+    <address class="inner-footer__contacts">
+      <div class="inner-footer__contacts-box">
+        <h2 class="inner-footer__contact-title inner-footer__contact-title--margin">BL ehf.</h2>
+        <p class="inner-footer__contact-text inner-footer__contact-text--margin">Sævarhöfða 2 / 110 Reykjavík</p>
+        <a class="inner-footer__contact-link" href="tel:525-8000">525-8000</a>
+        <span>/</span>
+        <a class="inner-footer__contact-link" href="www.bl.is">www.bl.is</a>
+      </div>
+      <div class="logo">
+        <img src="{{assetsPath}}/img/logo.svg" alt="">
+      </div>
+    </address>
+  </footer>
+</div>
+
+<div class="main-content">
+  <section class="technical technical-information">
+    <h1 class="primary-title primary-title--margin dark-blue">Tækniupplýsingar</h1>
+
+    <div class="table-container">
+      <table class="technical__table">
+        <thead class="technical__table-header technical__table-main-header">
+        <tr class="technical__table-main-header-row">
+          <th class="technical__table-category-title dark-blue">Vél og afköst</th>
+          <th class="technical__table-header-title">
+            <span class="dark-blue">1500 cc - 85 hö.</span>
+            <br>
+            <span class="light-blue">Bensín Sjálfskiptur</span>
+          </th>
+          <th class="technical__table-header-title">
+            <span class="dark-blue">1500 cc - 85 hö.</span>
+            <br>
+            <span class="light-blue">Bensín Sjálfskiptur</span>
+          </th>
+          <th class="technical__table-header-title">
+            <span class="dark-blue">1500 cc - 85 hö.</span>
+            <br>
+            <span class="light-blue">Bensín Sjálfskiptur</span>
+          </th>
+          <th class="technical__table-header-title">
+            <span class="dark-blue">1500 cc - 85 hö.</span>
+            <br>
+            <span class="light-blue">Bensín Sjálfskiptur</span>
+          </th>
+        </tr>
+        </thead>
+        <tbody class="technical__table-body">
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Eldsneyti</td>
+          <td class="technical__table-cell">Bensín</td>
+          <td class="technical__table-cell">Bensín</td>
+          <td class="technical__table-cell">Bensín</td>
+          <td class="technical__table-cell">Bensín</td>
+        </tr>
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Fjöldi Strokka</td>
+          <td class="technical__table-cell">3</td>
+          <td class="technical__table-cell">3</td>
+          <td class="technical__table-cell">3</td>
+          <td class="technical__table-cell">3</td>
+        </tr>
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Rúmtak Vélar</td>
+          <td class="technical__table-cell">1000</td>
+          <td class="technical__table-cell">1000</td>
+          <td class="technical__table-cell">1000</td>
+          <td class="technical__table-cell">1000</td>
+        </tr>
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Skipting</td>
+          <td class="technical__table-cell">Beinskiptur</td>
+          <td class="technical__table-cell">Beinskiptur</td>
+          <td class="technical__table-cell">Beinskiptur</td>
+          <td class="technical__table-cell">Beinskiptur</td>
+        </tr>
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Drifás</td>
+          <td class="technical__table-cell">Framhjóladrifinn</td>
+          <td class="technical__table-cell">Framhjóladrifinn</td>
+          <td class="technical__table-cell">Framhjóladrifinn</td>
+          <td class="technical__table-cell">Framhjóladrifinn</td>
+        </tr>
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Hámarks Hestöfl (Hö)</td>
+          <td class="technical__table-cell">100</td>
+          <td class="technical__table-cell">100</td>
+          <td class="technical__table-cell">100</td>
+          <td class="technical__table-cell">100</td>
+        </tr>
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Hámarks Tog (Nm)</td>
+          <td class="technical__table-cell">160</td>
+          <td class="technical__table-cell">160</td>
+          <td class="technical__table-cell">160</td>
+          <td class="technical__table-cell">160</td>
+        </tr>
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Hröðun (0-100 Km/Klst.)</td>
+          <td class="technical__table-cell">11.8</td>
+          <td class="technical__table-cell">11.8</td>
+          <td class="technical__table-cell">11.8</td>
+          <td class="technical__table-cell">11.8</td>
+        </tr>
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Hámarkshraði</td>
+          <td class="technical__table-cell">187</td>
+          <td class="technical__table-cell">187</td>
+          <td class="technical__table-cell">187</td>
+          <td class="technical__table-cell">187</td>
+        </tr>
+
+        <tr class="technical__table-header">
+          <th class="technical__table-category-title dark-blue">Eyðsla og útblástur</th>
+          <th class="technical__table-header-title technical__table-title--hidden"></th>
+          <th class="technical__table-header-title technical__table-title--hidden"></th>
+          <th class="technical__table-header-title technical__table-title--hidden"></th>
+          <th class="technical__table-header-title technical__table-title--hidden"></th>
+        </tr>
+
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Eyðsla WLTP Combined</td>
+          <td class="technical__table-cell">5.2</td>
+          <td class="technical__table-cell">5.2</td>
+          <td class="technical__table-cell">5.2</td>
+          <td class="technical__table-cell">5.2</td>
+        </tr>
+
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Co2 Gkm</td>
+          <td class="technical__table-cell">116</td>
+          <td class="technical__table-cell">116</td>
+          <td class="technical__table-cell">116</td>
+          <td class="technical__table-cell">116</td>
+        </tr>
+
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Emission Standard</td>
+          <td class="technical__table-cell">0</td>
+          <td class="technical__table-cell">0</td>
+          <td class="technical__table-cell">0</td>
+          <td class="technical__table-cell">0</td>
+        </tr>
+
+        <tr class="technical__table-header">
+          <th class="technical__table-category-title dark-blue">Helstu mál</th>
+          <th class="technical__table-header-title technical__table-title--hidden"></th>
+          <th class="technical__table-header-title technical__table-title--hidden"></th>
+          <th class="technical__table-header-title technical__table-title--hidden"></th>
+          <th class="technical__table-header-title technical__table-title--hidden"></th>
+        </tr>
+
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Heildarlengd</td>
+          <td class="technical__table-cell">4.050</td>
+          <td class="technical__table-cell">4.050</td>
+          <td class="technical__table-cell">4.050</td>
+          <td class="technical__table-cell">4.050</td>
+        </tr>
+
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Heildarbreidd</td>
+          <td class="technical__table-cell">1.798</td>
+          <td class="technical__table-cell">1.798</td>
+          <td class="technical__table-cell">1.798</td>
+          <td class="technical__table-cell">1.798</td>
+        </tr>
+
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Farangursrými</td>
+          <td class="technical__table-cell">391</td>
+          <td class="technical__table-cell">391</td>
+          <td class="technical__table-cell">391</td>
+          <td class="technical__table-cell">391</td>
+        </tr>
+
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Farangursrými /Með Sæti Niðri</td>
+          <td class="technical__table-cell">1.069</td>
+          <td class="technical__table-cell">1.069</td>
+          <td class="technical__table-cell">1.069</td>
+          <td class="technical__table-cell">1.069</td>
+        </tr>
+
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Eiginþyngd</td>
+          <td class="technical__table-cell">1.178</td>
+          <td class="technical__table-cell">1.178</td>
+          <td class="technical__table-cell">1.178</td>
+          <td class="technical__table-cell">1.178</td>
+        </tr>
+
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Heildarþyngd Ökutækis</td>
+          <td class="technical__table-cell">1.603</td>
+          <td class="technical__table-cell">1.603</td>
+          <td class="technical__table-cell">1.603</td>
+          <td class="technical__table-cell">1.603</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-container table-container--pt">
+      <table class="technical__table">
+        <thead class="technical__table-header technical__table-main-header">
+        <tr class="technical__table-main-header-row">
+          <th class="technical__table-category-title dark-blue">Vél og afköst</th>
+          <th class="technical__table-header-title">
+            <span class="dark-blue">1500 cc - 85 hö.</span>
+            <br>
+            <span class="light-blue">Bensín Sjálfskiptur</span>
+          </th>
+          <th class="technical__table-header-title">
+            <span class="dark-blue">1500 cc - 85 hö.</span>
+            <br>
+            <span class="light-blue">Bensín Sjálfskiptur</span>
+          </th>
+        </tr>
+        </thead>
+        <tbody class="technical__table-body">
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Eldsneyti</td>
+          <td class="technical__table-cell">Bensín</td>
+          <td class="technical__table-cell">Bensín</td>
+        </tr>
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Fjöldi Strokka</td>
+          <td class="technical__table-cell">3</td>
+          <td class="technical__table-cell">3</td>
+        </tr>
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Rúmtak Vélar</td>
+          <td class="technical__table-cell">1000</td>
+          <td class="technical__table-cell">1000</td>
+        </tr>
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Skipting</td>
+          <td class="technical__table-cell">Beinskiptur</td>
+          <td class="technical__table-cell">Beinskiptur</td>
+        </tr>
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Drifás</td>
+          <td class="technical__table-cell">Framhjóladrifinn</td>
+          <td class="technical__table-cell">Framhjóladrifinn</td>
+        </tr>
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Hámarks Hestöfl (Hö)</td>
+          <td class="technical__table-cell">100</td>
+          <td class="technical__table-cell">100</td>
+        </tr>
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Hámarks Tog (Nm)</td>
+          <td class="technical__table-cell">160</td>
+          <td class="technical__table-cell">160</td>
+        </tr>
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Hröðun (0-100 Km/Klst.)</td>
+          <td class="technical__table-cell">11.8</td>
+          <td class="technical__table-cell">11.8</td>
+        </tr>
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Hámarkshraði</td>
+          <td class="technical__table-cell">187</td>
+          <td class="technical__table-cell">187</td>
+        </tr>
+
+        <tr class="technical__table-header">
+          <th class="technical__table-category-title dark-blue">Eyðsla og útblástur</th>
+          <th class="technical__table-header-title technical__table-title--hidden"></th>
+        </tr>
+
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Eyðsla WLTP Combined</td>
+          <td class="technical__table-cell">5.2</td>
+          <td class="technical__table-cell">5.2</td>
+        </tr>
+
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Co2 Gkm</td>
+          <td class="technical__table-cell">116</td>
+          <td class="technical__table-cell">116</td>
+        </tr>
+
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Emission Standard</td>
+          <td class="technical__table-cell">0</td>
+          <td class="technical__table-cell">0</td>
+        </tr>
+
+        <tr class="technical__table-header">
+          <th class="technical__table-category-title dark-blue">Helstu mál</th>
+          <th class="technical__table-header-title technical__table-title--hidden"></th>
+        </tr>
+
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Heildarlengd</td>
+          <td class="technical__table-cell">4.050</td>
+          <td class="technical__table-cell">4.050</td>
+        </tr>
+
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Heildarbreidd</td>
+          <td class="technical__table-cell">1.798</td>
+          <td class="technical__table-cell">1.798</td>
+        </tr>
+
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Farangursrými</td>
+          <td class="technical__table-cell">391</td>
+          <td class="technical__table-cell">391</td>
+        </tr>
+
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Farangursrými /Með Sæti Niðri</td>
+          <td class="technical__table-cell">1.069</td>
+          <td class="technical__table-cell">1.069</td>
+        </tr>
+
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Eiginþyngd</td>
+          <td class="technical__table-cell">1.178</td>
+          <td class="technical__table-cell">1.178</td>
+        </tr>
+
+        <tr class="technical__table-row">
+          <td class="technical__table-cell">Heildarþyngd Ökutækis</td>
+          <td class="technical__table-cell">1.603</td>
+          <td class="technical__table-cell">1.603</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer class="inner-footer">
+    <div class="product-info">
+      <div class="qr-code">
+        <img src="{{assetsPath}}/img/QR-code.png" alt="QR-code">
+      </div>
+
+      <div class="product-info__desc">
+        <h1 class="first-title inner-footer__title inner-footer__title--margin">
+          <span class="dark-blue">NÝR RENAULT</span>
+          <span class="light-blue">CLIO V</span>
+        </h1>
+        <div class="product-info__desc-text-box">
+          <p class="product-info__desc-text product-info__desc-text--margin">Verðlisti Maí 2020</p>
+          <p class="product-info__desc-text product-info__desc-text--margin">Skannaðu þennan QR kóða til að fá meiri upplýsingar</p>
+        </div>
+      </div>
+    </div>
+
+    <address class="inner-footer__contacts">
+      <div class="inner-footer__contacts-box">
+        <h2 class="inner-footer__contact-title inner-footer__contact-title--margin">BL ehf.</h2>
+        <p class="inner-footer__contact-text inner-footer__contact-text--margin">Sævarhöfða 2 / 110 Reykjavík</p>
+        <a class="inner-footer__contact-link" href="tel:525-8000">525-8000</a>
+        <span>/</span>
+        <a class="inner-footer__contact-link" href="www.bl.is">www.bl.is</a>
+      </div>
+      <div class="logo">
+        <img src="{{assetsPath}}/img/logo.svg" alt="">
+      </div>
+    </address>
+  </footer>
+</div>
+
+<div class="main-content">
+  <section class="colors">
+    <h1 class="primary-title primary-title--margin dark-blue">Litir í boði</h1>
+    <ul class="car-colors car-colors-list">
+      <li class="car-colors__list-item">
+        <div class="car-colors__image-box">
+          <img src="{{assetsPath}}/img/color-1.png" alt="" class="car-colors__image">
+        </div>
+        <p class="car-colors__color car-colors__color--margin">Urban grey</p>
+      </li>
+      <li class="car-colors__list-item">
+        <div class="car-colors__image-box">
+          <img src="{{assetsPath}}/img/color-2.png" alt="" class="car-colors__image">
+        </div>
+        <p class="car-colors__color car-colors__color--margin">Titanium</p>
+      </li>
+      <li class="car-colors__list-item">
+        <div class="car-colors__image-box">
+          <img src="{{assetsPath}}/img/color-3.png" alt="" class="car-colors__image">
+        </div>
+        <p class="car-colors__color car-colors__color--margin">Mercury</p>
+      </li>
+      <li class="car-colors__list-item">
+        <div class="car-colors__image-box">
+          <img src="{{assetsPath}}/img/color-4.png" alt="" class="car-colors__image">
+        </div>
+        <p class="car-colors__color car-colors__color--margin">Iron Blue</p>
+      </li>
+      <li class="car-colors__list-item">
+        <div class="car-colors__image-box">
+          <img src="{{assetsPath}}/img/color-5.png" alt="" class="car-colors__image">
+        </div>
+        <p class="car-colors__color car-colors__color--margin">Glacier white</p>
+      </li>
+      <li class="car-colors__list-item">
+        <div class="car-colors__image-box">
+          <img src="{{assetsPath}}/img/color-6.png" alt="" class="car-colors__image">
+        </div>
+        <p class="car-colors__color car-colors__color--margin">Valencia orange</p>
+      </li>
+      <li class="car-colors__list-item">
+        <div class="car-colors__image-box">
+          <img src="{{assetsPath}}/img/color-7.png" alt="" class="car-colors__image">
+        </div>
+        <p class="car-colors__color car-colors__color--margin">Celadon blue</p>
+      </li>
+      <li class="car-colors__list-item">
+        <div class="car-colors__image-box">
+          <img src="{{assetsPath}}/img/color-8.png" alt="" class="car-colors__image">
+        </div>
+        <p class="car-colors__color car-colors__color--margin">Diamond black</p>
+      </li>
+      <li class="car-colors__list-item">
+        <div class="car-colors__image-box">
+          <img src="{{assetsPath}}/img/color-9.png" alt="" class="car-colors__image">
+        </div>
+        <p class="car-colors__color car-colors__color--margin">Flame red</p>
+      </li>
+      <li class="car-colors__list-item">
+        <div class="car-colors__image-box">
+          <img src="{{assetsPath}}/img/color-10.png" alt="" class="car-colors__image">
+        </div>
+        <p class="car-colors__color car-colors__color--margin">Vision brown</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="services">
+    <div class="services__info">
+      <section class="services_service">
+        <h1 class="primary-title primary-title--margin services__primary-title dark-blue">Þjónusta Renault</h1>
+        <p class="services__text">Bíla- og varahlutaábyrgð Renault veitir þér fullkomna hugarró.</p>
+        <p class="services__text">Varahlutaábyrgð <br>
+          Renault ábyrgist að allir varahlutir og aukahlutir sem keyptir eru hjá Renault og fylgdu með bílnum þegar hann var keyptur nýr verða lausir við ágalla hvað varðar efni eða frágang miðað við eðlilega notkun í 12 mánuði.
+        </p>
+        <p class="services__text">
+          Varahlutir og aukahlutir sem keyptir eru sérstaklega njóta eins árs / 20.000 km ábyrgðar Renault frá og með útgáfudegi reikningsins, hvort sem verður fyrr.
+        </p>
+        <p class="services__text">Ef ósvikinn varahlutur eða aukahlutur frá Renault sem keyptur er hjá Renault reynist gallaður hvað varðar efni eða frágang miðað við eðlilega notkun á ábyrgðartímabilinu mun Renault gera við eða skipta út umræddum varahlut og/eða aukahlut, án endurgjalds (þetta gildir þó ekki um eðlilegt slit).</p>
+      </section>
+
+      <section class="services__advantages">
+        <h1 class="primary-title primary-title--margin services__primary-title dark-blue">Ávinningur fyrir viðskiptavininn</h1>
+        <p class="services__text services__text--mt">
+          Ábyrgðin nær yfir kostnað vegna viðgerðar eða skipta á gölluðum varahlutum sem nauðsynlegir eru til að gera við efnis-, samsetningar- eða framleiðslugalla sem framleiðandi hefur viðurkennt, ef aðgerðin er framkvæmd af þjónustuaðila RENAULT. Hún nær einnig yfir afleitt tjón á bílnum sem rekja má til upphaflega gallans. RENAULT getur, að eigin geðþótta og í samráði við viðkomandi þjónustuaðila RENAULT, ákveðið hvort aðstæður kalli á að gert sé við gallaða varahluti eða þeim skipt út.
+        </p>
+
+        <h2 class="secondary-title secondary-title--margin services__secondary-title dark-blue">Gildistími ábyrgðar</h2>
+        <p class="services__text">
+          Nýi bíllinn þinn er í ábyrgð samkvæmt þessari bílaábyrgð RENAULT fyrir nýja bíla. Þetta þýðir að bíllinn er í ábyrgð samkvæmt skilmálunum sem eru settir fram í ábyrgðaryfirlýsingunni hvað varðar hvers kyns galla í efnum, uppsetningu eða galla í framleiðslu í þrjú ár frá dagsetningu afhendingar eða þar til 100.000 km hafa verið eknir, hvort sem verður fyrr.
+        </p>
+
+        <div class="warranty">
+          <div class="warranty__year">
+            <span class="warranty__value warranty__value--number">4</span>
+            <span class="warranty__value warranty__value--string">Á  <br> R <br>  A</span>
+          </div>
+          <div class="warranty__liability">
+            <span class="dark-blue warranty__liability-text">ÁBYRGÐ</span>
+            <span class="light-blue warranty__drive-text">eða að eknum <span>100.00 km.</span></span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <footer class="inner-footer">
+    <div class="product-info">
+      <div class="qr-code">
+        <img src="{{assetsPath}}/img/QR-code.png" alt="QR-code">
+      </div>
+
+      <div class="product-info__desc">
+        <h1 class="first-title inner-footer__title inner-footer__title--margin">
+          <span class="dark-blue">NÝR RENAULT</span>
+          <span class="light-blue">CLIO V</span>
+        </h1>
+        <div class="product-info__desc-text-box">
+          <p class="product-info__desc-text product-info__desc-text--margin">Verðlisti Maí 2020</p>
+          <p class="product-info__desc-text product-info__desc-text--margin">Skannaðu þennan QR kóða til að fá meiri upplýsingar</p>
+        </div>
+      </div>
+    </div>
+
+    <address class="inner-footer__contacts">
+      <div class="inner-footer__contacts-box">
+        <h2 class="inner-footer__contact-title inner-footer__contact-title--margin">BL ehf.</h2>
+        <p class="inner-footer__contact-text inner-footer__contact-text--margin">Sævarhöfða 2 / 110 Reykjavík</p>
+        <a class="inner-footer__contact-link" href="tel:525-8000">525-8000</a>
+        <span>/</span>
+        <a class="inner-footer__contact-link" href="www.bl.is">www.bl.is</a>
+      </div>
+      <div class="logo">
+        <img src="{{assetsPath}}/img/logo.svg" alt="">
+      </div>
+    </address>
+  </footer>
+</div>
 </body>
 </html>

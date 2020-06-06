@@ -11,11 +11,10 @@ class Main {
     this.logger = new Logger();
   }
 
-  public run() {
+  public async run() {
     try {
       Main.createLogsDirectory();
-
-      new Server().run();
+      await new Server().run();
     } catch (e) {
       this.logger.log('error', e);
     }

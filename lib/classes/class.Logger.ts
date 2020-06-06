@@ -6,7 +6,7 @@ class Logger implements ILogger {
 
     const message = JSON.stringify(data);
     let colorCode = '';
-    let fn = null;
+    let fn: any = null;
 
     /* eslint-disable no-console */
     switch (level) {
@@ -33,10 +33,11 @@ class Logger implements ILogger {
     const error = `${colorCode} ${JSON.parse(message)}`;
     const errorWithStack = `${colorCode} ${level} : ${date} : ${message} \n ${new Error().stack} \n \n`;
 
-    const stream = fs.createWriteStream(process.env.LOG_FILE_PATH, { flags: 'w+' });
-    stream.write(errorWithStack);
-
-    showStack ? fn(errorWithStack) : fn(error);
+    fs.appendFile(process.env.LOG_FILE_PATH, errorWithStack, (e) => {
+      if (e) throw e;
+      // @ts-ignore
+      showStack ? fn(errorWithStack) : fn(error);
+    });
   }
 }
 
