@@ -4,13 +4,13 @@ import Logger from './class.Logger';
 class Server {
   private server: Hapi.Server;
 
-  public run() {
+  public async run() {
     const l = new Logger();
 
     try {
-      this.init();
-      this.setRoutes();
-      this.start();
+      await this.init();
+      await this.setRoutes();
+      await this.start();
 
       l.log('good', 'Server started');
     } catch (e) {
@@ -18,27 +18,34 @@ class Server {
     }
   }
 
-  private init() {
-    this.server = Hapi.server({
+  private async init() {
+    this.server = await Hapi.server({
       port: process.env.PORT,
       host: process.env.HOST,
     });
   }
 
-  private setRoutes() {
-    this.server.route([
+  private async setRoutes() {
+    await this.server.route([
       {
         method: 'GET',
-        path: '/modelPDF/{id}',
+        path: '/modelPDF/',
         handler(req: Hapi.Request) {
-          return req.params.id;
+          return JSON.stringify(req.query);
         },
       },
     ]);
   }
 
-  private start() {
-    this.server.start();
+  private async start() {
+    await this.server.register({
+      plugin: require('hapi-cors'), // eslint-disable-line
+      options: {
+        origins: [process.env.ALLOWED_HOST],
+      },
+    });
+
+    await this.server.start();
   }
 }
 
