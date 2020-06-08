@@ -30,7 +30,7 @@ class Logger implements ILogger {
 
     const date = new Date().toISOString();
 
-    const error = `${colorCode} ${JSON.parse(message)}`;
+    const error = `${colorCode} ${typeof message === 'object' ? JSON.stringify(message) : message}`;
     const errorWithStack = `${colorCode} ${level} : ${date} : ${message} \n ${new Error().stack} \n \n`;
 
     fs.appendFile(process.env.LOG_FILE_PATH, errorWithStack, (e) => {

@@ -5,18 +5,13 @@ import Server from './classes/class.Server';
 require('dotenv').config();
 
 class Main {
-  private logger: Logger;
-
-  public constructor() {
-    this.logger = new Logger();
-  }
-
   public async run() {
     try {
       Main.createLogsDirectory();
       await new Server().run();
     } catch (e) {
-      this.logger.log('error', e);
+      const l = new Logger();
+      l.log('error', e);
     }
   }
 

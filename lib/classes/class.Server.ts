@@ -23,8 +23,7 @@ class Server {
 
       l.log('good', 'Server started');
     } catch (e) {
-      l.log('error', JSON.stringify(e));
-      process.exit(1);
+      l.log('error', e);
     }
   }
 
@@ -36,14 +35,12 @@ class Server {
   }
 
   private async setRoutes() {
-    console.log(`${this.rootPath}/templates/{file*}`);
-
     await this.server.register(Inert);
 
     await this.server.route([
       {
         method: 'GET',
-        path: '/modelPDF/',
+        path: '/modelPDF',
         handler: async (req: Hapi.Request, h: Hapi.ResponseToolkit) => {
           const pdf = new ModelPDF();
           const buffer = await pdf.generate(req.query);
@@ -59,7 +56,7 @@ class Server {
         path: '/public/{file*}',
         handler: {
           directory: {
-            path: `${this.rootPath}/templates/`,
+            path: path.normalize(`${this.rootPath}/templates/`),
             listing: true,
           },
         },

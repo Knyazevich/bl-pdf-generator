@@ -60,8 +60,6 @@ class ModelPDF {
       const content = await this.compileTemplate(this.TEMPLATE_PATH, data);
       const page = await this.createPage();
 
-      console.log(content);
-
       await page.setContent(content);
       await page.goto(`data:text/html,${content}`, { waitUntil: 'networkidle2' });
       const buffer = await page.pdf({
@@ -76,7 +74,7 @@ class ModelPDF {
       return buffer;
     } catch (e) {
       const l = new Logger();
-      l.log('error', JSON.stringify(e));
+      l.log('error', e);
     }
   }
 }
