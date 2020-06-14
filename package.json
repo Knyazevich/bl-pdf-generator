@@ -13,10 +13,11 @@
     "start": "tsc lib/index.ts",
     "build-ts": "tsc",
     "watch-ts": "tsc -w",
-    "serve": "npm run eslint:fix && npm run build-ts && npm run copy-static-assets && node dist/index.js",
+    "serve": "npm run remove-dist && npm run eslint:fix && npm run build-ts && npm run copy-static-assets && node dist/index.js",
     "eslint": "eslint ./lib/**/*.ts",
     "eslint:fix": "eslint ./lib/**/*.ts --fix",
-    "copy-static-assets": "ts-node copyStaticAssets.ts"
+    "copy-static-assets": "ts-node copyStaticAssets.ts",
+    "remove-dist": "ts-node removeDist.ts"
   },
   "version": "1.0.0",
   "dependencies": {
@@ -32,6 +33,7 @@
     "fs-extra": "^9.0.1",
     "handlebars": "^4.7.6",
     "hapi-cors": "^1.0.3",
+    "hapi-pulse": "^3.0.0",
     "puppeteer": "^1.20.0",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.3"

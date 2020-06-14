@@ -43,8 +43,8 @@ class ModelPDF {
    */
   private async createPage() {
     this.browser = await puppeteer.launch({
-      headless: !!process.env.IS_PDF_DEBUG,
-      devtools: !!process.env.IS_PDF_DEBUG,
+      headless: true,
+      devtools: false,
       args: ['--no-sandbox'],
     });
 
@@ -60,13 +60,28 @@ class ModelPDF {
       const content = await this.compileTemplate(this.TEMPLATE_PATH, data);
       const page = await this.createPage();
 
+      await page.setViewport({
+        width: 2480,
+        height: 3508,
+        deviceScaleFactor: 1,
+      });
+
+      console.log(page.viewport());
+
       await page.setContent(content);
-      await page.goto(`data:text/html,${content}`, { waitUntil: 'networkidle2' });
+      // @ts-ignore
+      page.emulateMedia('print');
+      await page.goto(`data:text/html,${content}`, { waitUntil: 'load' });
       const buffer = await page.pdf({
         format: 'A4',
+        // width: 2480,
+        // height: 3508,
         landscape: false,
         scale: 0.5,
         printBackground: true,
+        // displayHeaderFooter: true,
+        // headerTemplate: header,
+        // footerTemplate: footer,
       });
 
       this.closePage();
