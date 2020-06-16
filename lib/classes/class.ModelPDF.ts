@@ -45,7 +45,7 @@ class ModelPDF {
     this.browser = await puppeteer.launch({
       headless: true,
       devtools: false,
-      args: ['--no-sandbox'],
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });
 
     return this.browser.newPage();
