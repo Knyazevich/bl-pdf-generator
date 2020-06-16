@@ -66,22 +66,15 @@ class ModelPDF {
         deviceScaleFactor: 1,
       });
 
-      console.log(page.viewport());
-
       await page.setContent(content);
       // @ts-ignore
       page.emulateMedia('print');
       await page.goto(`data:text/html,${content}`, { waitUntil: 'load' });
       const buffer = await page.pdf({
         format: 'A4',
-        // width: 2480,
-        // height: 3508,
         landscape: false,
         scale: 0.5,
         printBackground: true,
-        // displayHeaderFooter: true,
-        // headerTemplate: header,
-        // footerTemplate: footer,
       });
 
       this.closePage();
