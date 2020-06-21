@@ -79,31 +79,20 @@ body {
 }
 
 .main-content {
-  /*padding: 70px 94px 50px 94px;*/
-  padding: 40px 64px 20px 64px;
-  padding: 0 64px;
-  padding-bottom: 40px;
+  padding: 40px 64px;
   width: 100%;
   max-width: 2480px;
-  height: 3508px;
+  height: 3330px;
   margin: 0 auto;
   position: relative;
-  /*break-inside: avoid-page;*/
+  /*background-color: #f8f3;*/
   break-inside: avoid;
-  /*break-after: avoid-page;*/
-  /*break-inside: avoid-column;*/
 }
 
-/*.main-content:first-child {
-  padding-top: 40px;
-}*/
-
-.inner-footer {
-  position: absolute;
-  left: 0;
-  padding: 0 64px;
-  bottom: 200px;
+.content-box {
+  height: 3080px;
 }
+
 
 .primary-title {
   font-family: 'TT Norms';
@@ -263,7 +252,11 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  /*margin-top: 225px;*/
+  position: absolute;
+  left: 0;
+  padding: 0 64px;
+  bottom: 40px;
+  margin: 0 !important;
 }
 
 .product-info {
@@ -348,11 +341,7 @@ body {
 }
 
 .accessories {
-  /*display: grid;*/
-  /*grid-template-columns: minmax(1300px, 1333px) 1fr;*/
-  /*grid-auto-rows: min-content;*/
   padding-top: 130px;
-  /*column-gap: 75.75px;*/
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -360,8 +349,6 @@ body {
 
 .accessories__main-img-box,
 .accessories__main-img {
-  /*width: 100%;*/
-  /*height: 100%;*/
   width: 1333px;
 }
 
@@ -371,9 +358,6 @@ body {
 }
 
 .accessories__info-wrapper {
-  /*display: grid;*/
-  /*grid-template-rows: auto;*/
-  /*grid-row-gap: 30px;*/
   position: relative;
   top: -90px;
   width: 40%;
@@ -381,7 +365,6 @@ body {
 }
 
 .accessories__title {
-  /*grid-column: 1/3;*/
   padding-bottom: 70px;
   width: 100%;
 }
@@ -419,7 +402,6 @@ body {
 }
 
 .accessories__gallery-wrapper {
-  /*grid-column: 1/3;*/
   padding-top: 110px;
 }
 
@@ -427,11 +409,6 @@ body {
   margin: 0;
   padding: 0;
   list-style: none;
-  /*display: grid;*/
-  /*grid-template-columns: repeat(4, 516px);*/
-  /*grid-auto-rows: 507px;*/
-  /*column-gap: 76px;*/
-  /*grid-row-gap: 52px;*/
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -439,7 +416,6 @@ body {
 
 .accessories__gallery-item {
   display: block;
-  /*width: 100%;*/
   height: 100%;
   margin-bottom: 52px;
 }
@@ -479,7 +455,6 @@ body {
   line-height: 107px;
   font-feature-settings: 'liga' off;
   padding-top: 26px;
-  /*border-bottom: 1px solid rgba(89,89,92, .54);*/
 }
 
 .technical__table-header-title {
@@ -490,7 +465,6 @@ body {
   display: flex;
   flex-flow: wrap column;
   justify-content: center;
-  /*border-bottom: 1px solid rgba(89,89,92, .54);*/
 }
 
 .technical__table-header-title:nth-child(2n+2) {
@@ -501,10 +475,6 @@ body {
   text-align: center;
 }
 
-/*.technical__table-row:first-child .technical__table-cell {
-  border-top: 2px solid rgba(89,89,92, .54);
-}
-*/
 .technical__table-cell:first-child {
   text-align: left;
 }
@@ -643,14 +613,14 @@ body {
     padding: 0;
   }
 
-  .main-content {
-    break-inside: avoid-page;
-    break-after: avoid;
-    break-before: avoid;
-  }
 
   @page {
     size: A4;
     margin: 0;
   }
+}
+
+@page {
+    orphans:4;
+    widows:2;
 }
