@@ -45,7 +45,7 @@ class ModelPDF {
     this.browser = await puppeteer.launch({
       headless: true,
       devtools: false,
-      args: ['--no-sandbox'],
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });
 
     return this.browser.newPage();
@@ -65,8 +65,6 @@ class ModelPDF {
         height: 3508,
         deviceScaleFactor: 1,
       });
-
-      console.log(page.viewport());
 
       await page.setContent(content);
       // @ts-ignore

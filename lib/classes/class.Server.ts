@@ -31,6 +31,9 @@ class Server {
     this.server = await Hapi.server({
       port: process.env.PORT,
       host: process.env.HOST,
+      router: {
+        stripTrailingSlash: true,
+      },
     });
   }
 
