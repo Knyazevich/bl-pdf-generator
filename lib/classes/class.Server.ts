@@ -31,9 +31,6 @@ class Server {
     this.server = await Hapi.server({
       port: process.env.PORT,
       host: process.env.HOST,
-      router: {
-        stripTrailingSlash: true,
-      },
     });
   }
 
@@ -43,7 +40,7 @@ class Server {
     await this.server.route([
       {
         method: 'GET',
-        path: '/modelPDF',
+        path: '/modelPDF/',
         handler: async (req: Hapi.Request, h: Hapi.ResponseToolkit) => {
           const pdf = new ModelPDF();
           const buffer = await pdf.generate(req.query);
