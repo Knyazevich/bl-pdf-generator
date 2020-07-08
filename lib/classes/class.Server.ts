@@ -55,6 +55,21 @@ class Server {
         },
       },
       {
+        method: 'POST',
+        path: '/modelPDF',
+        handler: async (req: Hapi.Request, h: Hapi.ResponseToolkit) => {
+          const pdf = new ModelPDF();
+          const buffer = await pdf.generate(req.payload);
+
+          console.log(req.payload);
+
+          return h.response(buffer)
+            .type('application/pdf')
+            .encoding('utf8')
+            .header('Content-Disposition', 'attachment;filename=model.pdf');
+        },
+      },
+      {
         method: 'GET',
         path: '/public/{file*}',
         handler: {
