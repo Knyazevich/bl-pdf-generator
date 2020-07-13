@@ -61,7 +61,7 @@ class Server {
           const pdf = new ModelPDF();
           const buffer = await pdf.generate(req.payload);
 
-          console.log(req.payload);
+          // console.log(req.payload);
 
           return h.response(buffer)
             .type('application/pdf')

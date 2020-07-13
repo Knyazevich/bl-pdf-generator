@@ -8,125 +8,17 @@
 <body>
 <div class="main-content">
   <div class="content-box">
-    <div class="hero-banner">
+    <div class="hero-banner" style="background-image: url({{img}});">
       <div class="hero-banner__title-box">
         <h1 class="hero-banner__title">
           <span class="hero-banner__title--red">NÝR</span> <br>
-          <span>RENAULT</span> <br>
-          <span>CLIO V</span>
+          <span>{{uppercase brandName}}</span> <br>
+          <span>{{uppercase modelName}}</span>
         </h1>
       </div>
     </div>
 
-    <div class="table-container">
-      <table class="auto-info-table">
-        <thead class="auto-info-table__header">
-        <tr class="auto-info-table__header-row">
-          <th class="auto-info-table__header-title">Gerð</th>
-          <th class="auto-info-table__header-title">Orkugjafi</th>
-          <th class="auto-info-table__header-title">Skipting</th>
-          <th class="auto-info-table__header-title">Skipting</th>
-          <th class="auto-info-table__header-title">Eyðsla/bl.*</th>
-          <th class="auto-info-table__header-title">Hestöfl</th>
-          <th class="auto-info-table__header-title">Co2</th>
-          <th class="auto-info-table__header-title">Verð</th>
-          <th class="auto-info-table__header-title">90% lán*</th>
-        </tr>
-        </thead>
-
-        <tbody class="auto-info-table__main">
-        <tr class="auto-info-table__main-row">
-          <td class="auto-info-table__main-cell">Zen</td>
-          <td class="auto-info-table__main-cell"><span>1000</span> cc</td>
-          <td class="auto-info-table__main-cell">Bensín</td>
-          <td class="auto-info-table__main-cell">Beinsk.</td>
-          <td class="auto-info-table__main-cell">5,2 l/100</td>
-          <td class="auto-info-table__main-cell">100</td>
-          <td class="auto-info-table__main-cell">100</td>
-          <td class="auto-info-table__main-cell"><span>2.990.000</span> <span>kr.</span></td>
-          <td class="auto-info-table__main-cell"><span>42.183</span> <span>kr.</span></td>
-        </tr>
-
-        <tr class="auto-info-table__main-row">
-          <td class="auto-info-table__main-cell">Intense</td>
-          <td class="auto-info-table__main-cell"><span>1200</span> cc</td>
-          <td class="auto-info-table__main-cell">Bensín</td>
-          <td class="auto-info-table__main-cell">Sjálfsk.</td>
-          <td class="auto-info-table__main-cell">5,8 l/100</td>
-          <td class="auto-info-table__main-cell">100</td>
-          <td class="auto-info-table__main-cell">100</td>
-          <td class="auto-info-table__main-cell"><span>3.350.000</span> <span>kr.</span></td>
-          <td class="auto-info-table__main-cell"><span>47.227</span> <span>kr.</span></td>
-        </tr>
-
-        <tr class="auto-info-table__main-row">
-          <td class="auto-info-table__main-cell">RS Line 4WD</td>
-          <td class="auto-info-table__main-cell"><span>1600</span> cc</td>
-          <td class="auto-info-table__main-cell">Dísil</td>
-          <td class="auto-info-table__main-cell">Beinsk.</td>
-          <td class="auto-info-table__main-cell">4,1 l/100</td>
-          <td class="auto-info-table__main-cell">85</td>
-          <td class="auto-info-table__main-cell">85</td>
-          <td class="auto-info-table__main-cell"><span>3.390.000</span> <span>kr.</span></td>
-          <td class="auto-info-table__main-cell"><span>47.781</span> <span>kr.</span></td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="table-container">
-      <table class="auto-info-table">
-        <thead class="auto-info-table__header">
-        <tr class="auto-info-table__header-row">
-          <th class="auto-info-table__header-title">Gerð</th>
-          <th class="auto-info-table__header-title">Orkugjafi</th>
-          <th class="auto-info-table__header-title">Skipting</th>
-          <th class="auto-info-table__header-title">Skipting</th>
-          <th class="auto-info-table__header-title">Eyðsla/bl.*</th>
-          <th class="auto-info-table__header-title">Hestöfl</th>
-          <th class="auto-info-table__header-title">Drægi</th>
-          <th class="auto-info-table__header-title">Verð</th>
-          <th class="auto-info-table__header-title">90% lán*</th>
-        </tr>
-        </thead>
-
-        <tbody class="auto-info-table__main">
-        <tr class="auto-info-table__main-row">
-          <td class="auto-info-table__main-cell">
-                <span class="bage eco-bage">
-                  <img src="{{assetsPath}}/img/eco-bage.svg" alt="" class="bage-image">
-                </span>
-            Zen 4WD
-          </td>
-          <td class="auto-info-table__main-cell"><span>1000</span> cc</td>
-          <td class="auto-info-table__main-cell">Plug-in Hybrid</td>
-          <td class="auto-info-table__main-cell">Beinsk.</td>
-          <td class="auto-info-table__main-cell">4,1 l/100</td>
-          <td class="auto-info-table__main-cell">100</td>
-          <td class="auto-info-table__main-cell"><span>50</span> km.</td>
-          <td class="auto-info-table__main-cell"><span>2.990.000</span> <span>kr.</span></td>
-          <td class="auto-info-table__main-cell"><span>42.183</span> <span>kr.</span></td>
-        </tr>
-
-        <tr class="auto-info-table__main-row">
-          <td class="auto-info-table__main-cell">
-                <span class="bage eco-bage">
-                  <img src="{{assetsPath}}/img/eco-bage.svg" alt="" class="bage-image">
-                </span>
-            Comfort
-          </td>
-          <td class="auto-info-table__main-cell"><span>1200</span> cc</td>
-          <td class="auto-info-table__main-cell">Dísil Hybrid</td>
-          <td class="auto-info-table__main-cell">Sjálfsk.</td>
-          <td class="auto-info-table__main-cell">5,1 l/100</td>
-          <td class="auto-info-table__main-cell">85</td>
-          <td class="auto-info-table__main-cell"><span>55</span> km.</td>
-          <td class="auto-info-table__main-cell"><span>3.350.000</span> <span>kr.</span></td>
-          <td class="auto-info-table__main-cell"><span>47.781</span> <span>kr.</span></td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
+    {{{variationTables}}}
 
     <section class="equipment">
       <h2 class="secondary-title secondary__title--margin">
@@ -167,7 +59,7 @@
             <li class="equipment__list-item">Rafdrifnar rúður framan</li>
             <li class="equipment__list-item">Rafdrifnir hliðarspeglar</li>
             <li class="equipment__list-item">Sjálfvirkir aðfellanlegir hliðarspeglar</li>
-            <li class="equipment__list-item">Upphitaðir hliðarspeglar </li>
+            <li class="equipment__list-item">Upphitaðir hliðarspeglar</li>
             <li class="equipment__list-item">LED afturljós</li>
             <li class="equipment__list-item">LED dagljós</li>
             <li class="equipment__list-item">LED stöðuljós</li>
@@ -236,17 +128,18 @@
   <footer class="inner-footer">
     <div class="product-info">
       <div class="qr-code">
-        <img src="{{assetsPath}}/img/QR-code.png" alt="QR-code">
+        <img src="{{qr}}" alt="">
       </div>
 
       <div class="product-info__desc">
         <h1 class="first-title inner-footer__title inner-footer__title--margin">
-          <span class="dark-blue">NÝR RENAULT</span>
-          <span class="light-blue">CLIO V</span>
+          <span class="dark-blue">NÝR {{uppercase brandName}}</span>
+          <span class="light-blue">{{uppercase modelName}}</span>
         </h1>
         <div class="product-info__desc-text-box">
-          <p class="product-info__desc-text product-info__desc-text--margin">Verðlisti Maí 2020</p>
-          <p class="product-info__desc-text product-info__desc-text--margin">Skannaðu þennan QR kóða til að fá meiri upplýsingar</p>
+          <p class="product-info__desc-text product-info__desc-text--margin">Verðlisti {{capitalize month}} {{year}}</p>
+          <p class="product-info__desc-text product-info__desc-text--margin">Skannaðu þennan QR kóða til að fá meiri
+            upplýsingar</p>
         </div>
       </div>
     </div>
@@ -314,7 +207,8 @@
     <section class="accessories">
       <h1 class="primary-title primary-title--margin dark-blue accessories__title">AUKAHLUTIR</h1>
       <div class="accessories__main-img-box">
-        <img class="accessories__main-img" src="{{assetsPath}}/img/gallery-main-img.png" alt="Renualt Clio 5, 'Valencia orange' color">
+        <img class="accessories__main-img" src="{{assetsPath}}/img/gallery-main-img.png"
+             alt="Renualt Clio 5, 'Valencia orange' color">
       </div>
       <div class="accessories__info-wrapper">
         <h2 class="secondary-title secondary-title--margin dark-blue">Aukahlutapakkar</h2>
@@ -460,17 +354,18 @@
   <footer class="inner-footer">
     <div class="product-info">
       <div class="qr-code">
-        <img src="{{assetsPath}}/img/QR-code.png" alt="QR-code">
+        <img src="{{qr}}" alt="">
       </div>
 
       <div class="product-info__desc">
         <h1 class="first-title inner-footer__title inner-footer__title--margin">
-          <span class="dark-blue">NÝR RENAULT</span>
-          <span class="light-blue">CLIO V</span>
+          <span class="dark-blue">NÝR {{uppercase brandName}}</span>
+          <span class="light-blue">{{uppercase modelName}}</span>
         </h1>
         <div class="product-info__desc-text-box">
-          <p class="product-info__desc-text product-info__desc-text--margin">Verðlisti Maí 2020</p>
-          <p class="product-info__desc-text product-info__desc-text--margin">Skannaðu þennan QR kóða til að fá meiri upplýsingar</p>
+          <p class="product-info__desc-text product-info__desc-text--margin">Verðlisti {{capitalize month}} {{year}}</p>
+          <p class="product-info__desc-text product-info__desc-text--margin">Skannaðu þennan QR kóða til að fá meiri
+            upplýsingar</p>
         </div>
       </div>
     </div>
@@ -814,17 +709,18 @@
   <footer class="inner-footer">
     <div class="product-info">
       <div class="qr-code">
-        <img src="{{assetsPath}}/img/QR-code.png" alt="QR-code">
+        <img src="{{qr}}" alt="">
       </div>
 
       <div class="product-info__desc">
         <h1 class="first-title inner-footer__title inner-footer__title--margin">
-          <span class="dark-blue">NÝR RENAULT</span>
-          <span class="light-blue">CLIO V</span>
+          <span class="dark-blue">NÝR {{uppercase brandName}}</span>
+          <span class="light-blue">{{uppercase modelName}}</span>
         </h1>
         <div class="product-info__desc-text-box">
-          <p class="product-info__desc-text product-info__desc-text--margin">Verðlisti Maí 2020</p>
-          <p class="product-info__desc-text product-info__desc-text--margin">Skannaðu þennan QR kóða til að fá meiri upplýsingar</p>
+          <p class="product-info__desc-text product-info__desc-text--margin">Verðlisti {{capitalize month}} {{year}}</p>
+          <p class="product-info__desc-text product-info__desc-text--margin">Skannaðu þennan QR kóða til að fá meiri
+            upplýsingar</p>
         </div>
       </div>
     </div>
@@ -846,71 +742,7 @@
 
 <div class="main-content">
   <div class="content-box">
-    <section class="colors">
-      <h1 class="primary-title primary-title--margin dark-blue">Litir í boði</h1>
-      <ul class="car-colors car-colors-list">
-        <li class="car-colors__list-item">
-          <div class="car-colors__image-box">
-            <img src="{{assetsPath}}/img/color-1.png" alt="" class="car-colors__image">
-          </div>
-          <p class="car-colors__color car-colors__color--margin">Urban grey</p>
-        </li>
-        <li class="car-colors__list-item">
-          <div class="car-colors__image-box">
-            <img src="{{assetsPath}}/img/color-2.png" alt="" class="car-colors__image">
-          </div>
-          <p class="car-colors__color car-colors__color--margin">Titanium</p>
-        </li>
-        <li class="car-colors__list-item">
-          <div class="car-colors__image-box">
-            <img src="{{assetsPath}}/img/color-3.png" alt="" class="car-colors__image">
-          </div>
-          <p class="car-colors__color car-colors__color--margin">Mercury</p>
-        </li>
-        <li class="car-colors__list-item">
-          <div class="car-colors__image-box">
-            <img src="{{assetsPath}}/img/color-4.png" alt="" class="car-colors__image">
-          </div>
-          <p class="car-colors__color car-colors__color--margin">Iron Blue</p>
-        </li>
-        <li class="car-colors__list-item">
-          <div class="car-colors__image-box">
-            <img src="{{assetsPath}}/img/color-5.png" alt="" class="car-colors__image">
-          </div>
-          <p class="car-colors__color car-colors__color--margin">Glacier white</p>
-        </li>
-        <li class="car-colors__list-item">
-          <div class="car-colors__image-box">
-            <img src="{{assetsPath}}/img/color-6.png" alt="" class="car-colors__image">
-          </div>
-          <p class="car-colors__color car-colors__color--margin">Valencia orange</p>
-        </li>
-        <li class="car-colors__list-item">
-          <div class="car-colors__image-box">
-            <img src="{{assetsPath}}/img/color-7.png" alt="" class="car-colors__image">
-          </div>
-          <p class="car-colors__color car-colors__color--margin">Celadon blue</p>
-        </li>
-        <li class="car-colors__list-item">
-          <div class="car-colors__image-box">
-            <img src="{{assetsPath}}/img/color-8.png" alt="" class="car-colors__image">
-          </div>
-          <p class="car-colors__color car-colors__color--margin">Diamond black</p>
-        </li>
-        <li class="car-colors__list-item">
-          <div class="car-colors__image-box">
-            <img src="{{assetsPath}}/img/color-9.png" alt="" class="car-colors__image">
-          </div>
-          <p class="car-colors__color car-colors__color--margin">Flame red</p>
-        </li>
-        <li class="car-colors__list-item">
-          <div class="car-colors__image-box">
-            <img src="{{assetsPath}}/img/color-10.png" alt="" class="car-colors__image">
-          </div>
-          <p class="car-colors__color car-colors__color--margin">Vision brown</p>
-        </li>
-      </ul>
-    </section>
+    {{{colors}}}
 
     <section class="services">
       <div class="services__info">
@@ -918,23 +750,37 @@
           <h1 class="primary-title primary-title--margin services__primary-title dark-blue">Þjónusta Renault</h1>
           <p class="services__text">Bíla- og varahlutaábyrgð Renault veitir þér fullkomna hugarró.</p>
           <p class="services__text">Varahlutaábyrgð <br>
-            Renault ábyrgist að allir varahlutir og aukahlutir sem keyptir eru hjá Renault og fylgdu með bílnum þegar hann var keyptur nýr verða lausir við ágalla hvað varðar efni eða frágang miðað við eðlilega notkun í 12 mánuði.
+            Renault ábyrgist að allir varahlutir og aukahlutir sem keyptir eru hjá Renault og fylgdu með bílnum þegar
+            hann var keyptur nýr verða lausir við ágalla hvað varðar efni eða frágang miðað við eðlilega notkun í 12
+            mánuði.
           </p>
           <p class="services__text">
-            Varahlutir og aukahlutir sem keyptir eru sérstaklega njóta eins árs / 20.000 km ábyrgðar Renault frá og með útgáfudegi reikningsins, hvort sem verður fyrr.
+            Varahlutir og aukahlutir sem keyptir eru sérstaklega njóta eins árs / 20.000 km ábyrgðar Renault frá og með
+            útgáfudegi reikningsins, hvort sem verður fyrr.
           </p>
-          <p class="services__text">Ef ósvikinn varahlutur eða aukahlutur frá Renault sem keyptur er hjá Renault reynist gallaður hvað varðar efni eða frágang miðað við eðlilega notkun á ábyrgðartímabilinu mun Renault gera við eða skipta út umræddum varahlut og/eða aukahlut, án endurgjalds (þetta gildir þó ekki um eðlilegt slit).</p>
+          <p class="services__text">Ef ósvikinn varahlutur eða aukahlutur frá Renault sem keyptur er hjá Renault reynist
+            gallaður hvað varðar efni eða frágang miðað við eðlilega notkun á ábyrgðartímabilinu mun Renault gera við
+            eða skipta út umræddum varahlut og/eða aukahlut, án endurgjalds (þetta gildir þó ekki um eðlilegt slit).</p>
         </section>
 
         <section class="services__advantages">
-          <h1 class="primary-title primary-title--margin services__primary-title dark-blue">Ávinningur fyrir viðskiptavininn</h1>
+          <h1 class="primary-title primary-title--margin services__primary-title dark-blue">Ávinningur fyrir
+            viðskiptavininn</h1>
           <p class="services__text services__text--mt">
-            Ábyrgðin nær yfir kostnað vegna viðgerðar eða skipta á gölluðum varahlutum sem nauðsynlegir eru til að gera við efnis-, samsetningar- eða framleiðslugalla sem framleiðandi hefur viðurkennt, ef aðgerðin er framkvæmd af þjónustuaðila RENAULT. Hún nær einnig yfir afleitt tjón á bílnum sem rekja má til upphaflega gallans. RENAULT getur, að eigin geðþótta og í samráði við viðkomandi þjónustuaðila RENAULT, ákveðið hvort aðstæður kalli á að gert sé við gallaða varahluti eða þeim skipt út.
+            Ábyrgðin nær yfir kostnað vegna viðgerðar eða skipta á gölluðum varahlutum sem nauðsynlegir eru til að gera
+            við efnis-, samsetningar- eða framleiðslugalla sem framleiðandi hefur viðurkennt, ef aðgerðin er framkvæmd
+            af þjónustuaðila RENAULT. Hún nær einnig yfir afleitt tjón á bílnum sem rekja má til upphaflega gallans.
+            RENAULT getur, að eigin geðþótta og í samráði við viðkomandi þjónustuaðila RENAULT, ákveðið hvort aðstæður
+            kalli á að gert sé við gallaða varahluti eða þeim skipt út.
           </p>
 
-          <h2 class="secondary-title secondary-title--margin services__secondary-title dark-blue">Gildistími ábyrgðar</h2>
+          <h2 class="secondary-title secondary-title--margin services__secondary-title dark-blue">Gildistími
+            ábyrgðar</h2>
           <p class="services__text">
-            Nýi bíllinn þinn er í ábyrgð samkvæmt þessari bílaábyrgð RENAULT fyrir nýja bíla. Þetta þýðir að bíllinn er í ábyrgð samkvæmt skilmálunum sem eru settir fram í ábyrgðaryfirlýsingunni hvað varðar hvers kyns galla í efnum, uppsetningu eða galla í framleiðslu í þrjú ár frá dagsetningu afhendingar eða þar til 100.000 km hafa verið eknir, hvort sem verður fyrr.
+            Nýi bíllinn þinn er í ábyrgð samkvæmt þessari bílaábyrgð RENAULT fyrir nýja bíla. Þetta þýðir að bíllinn er
+            í ábyrgð samkvæmt skilmálunum sem eru settir fram í ábyrgðaryfirlýsingunni hvað varðar hvers kyns galla í
+            efnum, uppsetningu eða galla í framleiðslu í þrjú ár frá dagsetningu afhendingar eða þar til 100.000 km hafa
+            verið eknir, hvort sem verður fyrr.
           </p>
 
           <div class="warranty">
@@ -955,17 +801,18 @@
   <footer class="inner-footer">
     <div class="product-info">
       <div class="qr-code">
-        <img src="{{assetsPath}}/img/QR-code.png" alt="QR-code">
+        <img src="{{qr}}" alt="">
       </div>
 
       <div class="product-info__desc">
         <h1 class="first-title inner-footer__title inner-footer__title--margin">
-          <span class="dark-blue">NÝR RENAULT</span>
-          <span class="light-blue">CLIO V</span>
+          <span class="dark-blue">NÝR {{uppercase brandName}}</span>
+          <span class="light-blue">{{uppercase modelName}}</span>
         </h1>
         <div class="product-info__desc-text-box">
-          <p class="product-info__desc-text product-info__desc-text--margin">Verðlisti Maí 2020</p>
-          <p class="product-info__desc-text product-info__desc-text--margin">Skannaðu þennan QR kóða til að fá meiri upplýsingar</p>
+          <p class="product-info__desc-text product-info__desc-text--margin">Verðlisti {{capitalize month}} {{year}}</p>
+          <p class="product-info__desc-text product-info__desc-text--margin">Skannaðu þennan QR kóða til að fá meiri
+            upplýsingar</p>
         </div>
       </div>
     </div>

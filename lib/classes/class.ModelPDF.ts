@@ -1,7 +1,8 @@
 import puppeteer, { Browser } from 'puppeteer';
-import * as hbs from 'handlebars';
+import * as Handlebars from 'handlebars';
 import * as fs from 'fs';
 import Logger from './class.Logger';
+import PDFHelpers from './class.PDFHelpers';
 
 const { readFile } = fs.promises;
 
@@ -20,6 +21,28 @@ class ModelPDF {
     this.data = {};
   }
 
+  public async registerTemplateHelpers() {
+    try {
+      Handlebars.registerHelper('uppercase', (string) => {
+        if (string && typeof string === 'string') {
+          return string.toUpperCase();
+        }
+
+        return '';
+      });
+
+      Handlebars.registerHelper('capitalize', (string) => {
+        if (string && typeof string === 'string') {
+          return string[0].toUpperCase() + string.slice(1).toLowerCase();
+        }
+
+        return '';
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
   /**
    * Compile the handlebars template to an HTML string.
    *
@@ -27,12 +50,20 @@ class ModelPDF {
    * @param data
    * @return {string} Template's HTML
    */
-  public async compileTemplate(templateName: string, data: {}) {
+  public async compileTemplate(templateName: string, data: Payload) {
     const filePath = path.join(process.cwd(), templateName);
     const template = await readFile(filePath, 'utf-8');
-    return hbs.compile(template)({
+    await this.registerTemplateHelpers();
+
+    return Handlebars.compile(template)({
       ...data,
       assetsPath: `http://${process.env.HOST}:${process.env.PORT}/public/assets`,
+      variationTables: PDFHelpers.getVariationTablesHTML(data.tables),
+      techSpecsTable: PDFHelpers.getTechSpecsTableHTML(data.techSpecsList),
+      colors: PDFHelpers.getColorsHTML(data.colors),
+      qr: PDFHelpers.getQRCode('https://bl.is'),
+      year: new Date().getFullYear(),
+      month: PDFHelpers.getCurrentMonth(),
     });
   }
 
