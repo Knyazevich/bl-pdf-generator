@@ -59,6 +59,8 @@ class ModelPDF {
       ...data,
       assetsPath: `http://${process.env.HOST}:${process.env.PORT}/public/assets`,
       variationTables: PDFHelpers.getVariationTablesHTML(data.tables),
+      equipmentLists: PDFHelpers.getEquipmentHTML(data.equipment),
+      extraEquipmentLists: PDFHelpers.getExtraEquipmentHTML(data.extraEquipment),
       techSpecsTable: PDFHelpers.getTechSpecsTableHTML(data.techSpecsList),
       colors: PDFHelpers.getColorsHTML(data.colors),
       qr: PDFHelpers.getQRCode('https://bl.is'),

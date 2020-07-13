@@ -81,6 +81,89 @@ class PDFHelpers {
     return markup;
   }
 
+  public static getEquipmentHTML(equipment: EquipmentLists) {
+    let markup = '';
+    const mainTitle = PDFHelpers.splitModelTitle(equipment.title);
+
+    if (!equipment.collections.length) {
+      return markup;
+    }
+
+    // let elementsCount = 0;
+    //
+    // equipment.collections.forEach((collection) => {
+    //   elementsCount += collection.list.length;
+    // });
+
+    markup += `
+    <section class="equipment">
+      <h2 class="secondary-title secondary__title--margin">
+        <span class="dark-blue">${mainTitle[0]}</span>
+        <span class="light-blue">${mainTitle[1]}</span>
+      </h2>
+
+      <div class="list-wrapper">
+        <ul class="equipment__list">
+    `;
+
+    equipment.collections.forEach((collection) => {
+      markup += `<div class="list-category"><h3 class="third-title">${collection.title}</h3>`;
+
+      collection.list.forEach((listElement) => {
+        markup += `<li class="equipment__list-item">${listElement}</li>`;
+      });
+
+      markup += '</div>';
+    });
+
+    return markup;
+  }
+
+  public static splitModelTitle(title: String) {
+    const titleWords = title.split(' ');
+    const firstWord = titleWords.shift();
+    const otherWords = titleWords.join(' ');
+
+    return [firstWord, otherWords];
+  }
+
+  public static getExtraEquipmentHTML(extraEquipment: Array<EquipmentList>) {
+    let markup = '';
+
+    if (!extraEquipment.length) {
+      return markup;
+    }
+
+    extraEquipment.forEach((equipmentList) => {
+      const title = PDFHelpers.splitModelTitle(equipmentList.title);
+
+      markup += `
+      <section class="extra-in-intens equipment">
+        <h2 class="secondary-title secondary__title--margin">
+          <span class="dark-blue">${title[0]}</span>
+          <span class="light-blue">${title[1]}</span>
+        </h2>
+  
+        <div class="list-wrapper">
+          <ul class="equipment__list">
+            <div class="list-category">
+          `;
+
+      equipmentList.list.forEach((listElement) => {
+        markup += `<li class="equipment__list-item">${listElement}</li>`;
+      });
+
+      markup += `
+            </div>
+          </ul>
+        </div>
+    </section>
+    `;
+    });
+
+    return markup;
+  }
+
   public static getColorsHTML(colors: Array<ColorVariation>) {
     let markup = '';
 
