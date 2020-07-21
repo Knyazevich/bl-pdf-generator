@@ -53,6 +53,7 @@ class ModelPDF {
   public async compileTemplate(templateName: string, data: Payload) {
     const filePath = path.join(process.cwd(), templateName);
     const template = await readFile(filePath, 'utf-8');
+    const qr = await PDFHelpers.getQRCode('https://bl.is');
     await this.registerTemplateHelpers();
 
     return Handlebars.compile(template)({
@@ -63,7 +64,7 @@ class ModelPDF {
       extraEquipmentLists: PDFHelpers.getExtraEquipmentHTML(data.extraEquipment),
       techSpecsTable: PDFHelpers.getTechSpecsTableHTML(data.techSpecsList),
       colors: PDFHelpers.getColorsHTML(data.colors),
-      qr: PDFHelpers.getQRCode('https://bl.is'),
+      qr,
       year: new Date().getFullYear(),
       month: PDFHelpers.getCurrentMonth(),
     });
@@ -102,7 +103,7 @@ class ModelPDF {
       await page.setContent(content);
       // @ts-ignore
       page.emulateMedia('print');
-      await page.goto(`data:text/html,${content}`, { waitUntil: 'load' });
+      await page.goto(`data:text/html,${content}`, { waitUntil: 'networkidle2' });
       const buffer = await page.pdf({
         format: 'A4',
         landscape: false,

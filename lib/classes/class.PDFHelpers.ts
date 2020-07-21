@@ -230,13 +230,103 @@ class PDFHelpers {
   }
 
   public static getTechSpecsTableHTML(specs: Array<TechSpecs>) {
-    const markup = '';
+    let markup = '';
 
     if (!specs || !specs.length) {
       return markup;
     }
 
+    if (specs.length <= 4) {
+      markup += this.generateTable(specs, true);
+    } else {
+      const specsChunks = this.chunks(specs, 4);
+
+      specsChunks.forEach((chunk, index) => {
+        markup += this.generateTable(chunk, index === 0);
+      });
+    }
+
     return markup;
+  }
+
+  public static generateTable(specs: Array<TechSpecs>, isFirstRow: boolean) {
+    let markup = '';
+
+    markup += `
+      <div class="table-container ${!isFirstRow ? 'table-container--pt' : ''}">
+        <table class="technical__table">
+          <thead class="technical__table-header technical__table-main-header">
+          <tr class="technical__table-main-header-row">
+            <th class="technical__table-category-title dark-blue">Vél og afköst</th>
+    `;
+
+    specs.forEach((spec) => {
+      markup += `
+        <th class="technical__table-header-title">
+          <span class="dark-blue">${spec.meta}</span>
+          <br>
+          <span class="light-blue">${spec.title}</span>
+        </th>
+      `;
+    });
+
+    /* eslint-disable max-len */
+    markup += `
+         </tr>
+        </thead>
+        <tbody class="technical__table-body">
+          ${this.generateRow(['Eldsneyti', ...specs.map((spec) => spec.engineAndPerformance.fuelType)])}
+          ${this.generateRow(['Fjöldi Strokka', ...specs.map((spec) => spec.engineAndPerformance.numberOfCylinders)])}
+          ${this.generateRow(['Rúmtak Vélar', ...specs.map((spec) => spec.engineAndPerformance.inductionCapacity)])}
+          ${this.generateRow(['Skipting', ...specs.map((spec) => spec.engineAndPerformance.transmission)])}
+          ${this.generateRow(['Drifás', ...specs.map((spec) => spec.engineAndPerformance.wheelsDriven)])}
+          ${this.generateRow(['Hámarks Hestöfl (Hö)', ...specs.map((spec) => spec.engineAndPerformance.maxPower)])}
+          ${this.generateRow(['Hámarks Tog (Nm)', ...specs.map((spec) => spec.engineAndPerformance.maxTorgue)])}
+          ${this.generateRow(['Hröðun (0-100 Km/Klst.)', ...specs.map((spec) => spec.engineAndPerformance.acceleration)])}
+          ${this.generateRow(['Hámarkshraði', ...specs.map((spec) => spec.engineAndPerformance.maxSpeed)])}
+          ${this.generateRow(['Eyðsla og útblástur', [].fill('', 0, 4)], true)}
+          ${this.generateRow(['Eyðsla WLTP Combined', ...specs.map((spec) => spec.spendingAndExhaust.fuelConsumptionCombined)])}
+          ${this.generateRow(['Co2 Gkm', ...specs.map((spec) => spec.spendingAndExhaust.co2)])}
+          ${this.generateRow(['Emission Standard', ...specs.map((spec) => spec.spendingAndExhaust.emissionStandard)])}
+          ${this.generateRow(['Helstu mál', [].fill('', 0, 4)], true)}
+          ${this.generateRow(['Heildarlengd', ...specs.map((spec) => new Intl.NumberFormat('de-DE').format(spec.mainIssues.overallLength))])}
+          ${this.generateRow(['Heildarbreidd', ...specs.map((spec) => new Intl.NumberFormat('de-DE').format(spec.mainIssues.overallWidth))])}
+          ${this.generateRow(['Farangursrými', ...specs.map((spec) => new Intl.NumberFormat('de-DE').format(spec.mainIssues.loadVolumeLitres))])}
+          ${this.generateRow(['Farangursrými /Með Sæti Niðri', ...specs.map((spec) => new Intl.NumberFormat('de-DE').format(spec.mainIssues.maximumLoadVolumeLitres))])}
+          ${this.generateRow(['Eiginþyngd', ...specs.map((spec) => new Intl.NumberFormat('de-DE').format(spec.mainIssues.ownWeight))])}
+          ${this.generateRow(['Heildarþyngd Ökutækis', ...specs.map((spec) => new Intl.NumberFormat('de-DE').format(spec.mainIssues.maxWeight))])}
+        </tbody>
+      </table>
+    </div>
+    `;
+    /* eslint-enable max-len */
+
+    return markup;
+  }
+
+  private static generateRow(data: Array<any>, isHeading?: boolean) {
+    const node = isHeading ? 'th' : 'td';
+    const rowClass = isHeading ? 'technical__table-category-title dark-blue' : 'technical__table-cell';
+
+    let markup = '<tr class="technical__table-row">';
+
+    data.forEach((element) => {
+      markup += `<${node} class="${rowClass}">${element}</${node}>`;
+    });
+
+    markup += '</tr>';
+
+    return markup;
+  }
+
+  private static chunks(array: Array<any>, size: number) {
+    const result = [];
+
+    while (array.length) {
+      result.push(array.splice(0, size));
+    }
+
+    return result;
   }
 }
 

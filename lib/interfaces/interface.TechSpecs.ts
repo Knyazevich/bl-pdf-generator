@@ -18,11 +18,11 @@ interface TechSpecs {
     emissionStandard: Number,
   },
   mainIssues: {
-    overallLength: Number,
-    overallWidth: Number,
-    loadVolumeLitres: Number,
-    maximumLoadVolumeLitres: Number,
-    ownWeight: Number,
-    maxWeight: Number,
+    overallLength: number,
+    overallWidth: number,
+    loadVolumeLitres: number,
+    maximumLoadVolumeLitres: number,
+    ownWeight: number,
+    maxWeight: number,
   }
 }
