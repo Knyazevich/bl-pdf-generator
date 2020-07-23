@@ -6,20 +6,38 @@ class PDFHelpers {
     const ecoCars = tablesData[1];
     let markup = '';
 
-    const tableHeader = `
+    const oilHeader = `
       <div class="table-container">
         <table class="auto-info-table">
           <thead class="auto-info-table__header">
           <tr class="auto-info-table__header-row">
             <th class="auto-info-table__header-title">Gerð</th>
+            <th class="auto-info-table__header-title">Stærð vélar</th>
             <th class="auto-info-table__header-title">Orkugjafi</th>
             <th class="auto-info-table__header-title">Skipting</th>
-            <th class="auto-info-table__header-title">Skipting</th>
-            <th class="auto-info-table__header-title">Eyðsla/bl.*</th>
+            <th class="auto-info-table__header-title">Eyðsla</th>
             <th class="auto-info-table__header-title">Hestöfl</th>
             <th class="auto-info-table__header-title">Co2</th>
             <th class="auto-info-table__header-title">Verð</th>
-            <th class="auto-info-table__header-title">90% lán*</th>
+          </tr>
+          </thead>
+        
+          <tbody class="auto-info-table__main">
+    `;
+
+    const ecoHeader = `
+      <div class="table-container">
+        <table class="auto-info-table">
+          <thead class="auto-info-table__header">
+          <tr class="auto-info-table__header-row">
+            <th class="auto-info-table__header-title">Gerð</th>
+            <th class="auto-info-table__header-title">Stærð vélar</th>
+            <th class="auto-info-table__header-title">Orkugjafi</th>
+            <th class="auto-info-table__header-title">Skipting</th>
+            <th class="auto-info-table__header-title">Eyðsla</th>
+            <th class="auto-info-table__header-title">Hestöfl</th>
+            <th class="auto-info-table__header-title">Drægi</th>
+            <th class="auto-info-table__header-title">Verð</th>
           </tr>
           </thead>
         
@@ -29,7 +47,7 @@ class PDFHelpers {
     const tableFooter = '</tbody></table></div>';
 
     if (oilBasedCars.length) {
-      markup += tableHeader;
+      markup += oilHeader;
 
       oilBasedCars.forEach((car: VariationTableRow) => {
         markup += `
@@ -38,11 +56,14 @@ class PDFHelpers {
           <td class="auto-info-table__main-cell"><span>${car.capacity}</span> cc</td>
           <td class="auto-info-table__main-cell">${car.fuelType}</td>
           <td class="auto-info-table__main-cell">${car.transmission}</td>
-          <td class="auto-info-table__main-cell">${car.fuelConsumptionCombined} l/100</td>
+          <td class="auto-info-table__main-cell">
+           ${car.fuelConsumptionCombined.toString().replace(/\./g, ',')} l/100
+          </td>
           <td class="auto-info-table__main-cell">${car.maxPower}</td>
           <td class="auto-info-table__main-cell">${car.co2}</td>
-          <td class="auto-info-table__main-cell"><span>${car.range}</span> <span>kr.</span></td>
-          <td class="auto-info-table__main-cell"><span>${car.price}</span> <span>kr.</span></td>
+          <td class="auto-info-table__main-cell">
+           <span>${new Intl.NumberFormat('de-DE').format(car.price)}</span> <span>kr.</span>
+          </td>
         </tr>
       `;
       });
@@ -51,7 +72,7 @@ class PDFHelpers {
     }
 
     if (ecoCars.length) {
-      markup += tableHeader;
+      markup += ecoHeader;
 
       ecoCars.forEach((car: VariationTableRow) => {
         markup += `
@@ -68,8 +89,7 @@ class PDFHelpers {
           <td class="auto-info-table__main-cell">${car.transmission}</td>
           <td class="auto-info-table__main-cell">${car.fuelConsumptionCombined} l/100</td>
           <td class="auto-info-table__main-cell">${car.maxPower}</td>
-          <td class="auto-info-table__main-cell">${car.co2}</td>
-          <td class="auto-info-table__main-cell"><span>${car.range}</span> <span>kr.</span></td>
+          <td class="auto-info-table__main-cell">${car.range} km.</td>
           <td class="auto-info-table__main-cell"><span>${car.price}</span> <span>kr.</span></td>
         </tr>
       `;

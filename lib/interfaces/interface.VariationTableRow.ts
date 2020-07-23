@@ -1,11 +1,11 @@
 interface VariationTableRow {
   name: String,
-  capacity: Number,
+  capacity: number,
   fuelType: String,
   transmission: String,
-  fuelConsumptionCombined: Number,
-  maxPower: Number,
-  co2: Number,
-  range: Number,
-  price: Number,
+  fuelConsumptionCombined: number,
+  maxPower: number,
+  co2: number,
+  range: number,
+  price: number,
 }
