@@ -288,7 +288,6 @@ class PDFHelpers {
       markup += `
         <th class="technical__table-header-title">
           <span class="dark-blue">${spec.meta}</span>
-          <br>
           <span class="light-blue">${spec.title}</span>
         </th>
       `;
@@ -308,11 +307,11 @@ class PDFHelpers {
           ${this.generateRow(['Hámarks Tog (Nm)', ...specs.map((spec) => spec.engineAndPerformance.maxTorgue)])}
           ${this.generateRow(['Hröðun (0-100 Km/Klst.)', ...specs.map((spec) => spec.engineAndPerformance.acceleration)])}
           ${this.generateRow(['Hámarkshraði', ...specs.map((spec) => spec.engineAndPerformance.maxSpeed)])}
-          ${this.generateRow(['Eyðsla og útblástur', [].fill('', 0, 4)], true)}
+          ${this.generateRow(['Eyðsla og útblástur', ...new Array(specs.length).fill('', 0, specs.length)], true)}
           ${this.generateRow(['Eyðsla WLTP Combined', ...specs.map((spec) => spec.spendingAndExhaust.fuelConsumptionCombined)])}
           ${this.generateRow(['Co2 Gkm', ...specs.map((spec) => spec.spendingAndExhaust.co2)])}
           ${this.generateRow(['Emission Standard', ...specs.map((spec) => spec.spendingAndExhaust.emissionStandard)])}
-          ${this.generateRow(['Helstu mál', [].fill('', 0, 4)], true)}
+          ${this.generateRow(['Helstu mál', ...new Array(specs.length).fill('', 0, specs.length)], true)}
           ${this.generateRow(['Heildarlengd', ...specs.map((spec) => new Intl.NumberFormat('de-DE').format(spec.mainIssues.overallLength))])}
           ${this.generateRow(['Heildarbreidd', ...specs.map((spec) => new Intl.NumberFormat('de-DE').format(spec.mainIssues.overallWidth))])}
           ${this.generateRow(['Farangursrými', ...specs.map((spec) => new Intl.NumberFormat('de-DE').format(spec.mainIssues.loadVolumeLitres))])}
@@ -332,7 +331,7 @@ class PDFHelpers {
     const node = isHeading ? 'th' : 'td';
     const rowClass = isHeading ? 'technical__table-category-title dark-blue' : 'technical__table-cell';
 
-    let markup = '<tr class="technical__table-row">';
+    let markup = `<tr class="technical__table-row ${isHeading ? 'technical__table-main-header-row' : ''}">`;
 
     data.forEach((element) => {
       markup += `<${node} class="${rowClass}">${element}</${node}>`;

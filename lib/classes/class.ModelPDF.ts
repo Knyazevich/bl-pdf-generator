@@ -95,6 +95,8 @@ class ModelPDF {
       const content = await this.compileTemplate(this.TEMPLATE_PATH, data);
       const page = await this.createPage();
 
+      console.log(content);
+
       await page.setViewport({
         width: 2480,
         height: 3508,

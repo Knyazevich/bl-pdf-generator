@@ -489,6 +489,26 @@ body {
   width: 2290px;
 }
 
+.technical__table-main-header-row {
+  position: relative;
+  overflow: hidden;
+}
+
+.technical__table-main-header-row:after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  display: block;
+  height: 2px;
+  left: 0;
+  width: 2200px;
+  background-color: rgba(89, 89, 92, 0.54);
+}
+
+.technical__table-main-header-row th:nth-child(2n+2) {
+  background-color: rgba(196, 196, 196, .2);
+}
+
 .car-colors-list {
   list-style: none;
   padding: 0;
