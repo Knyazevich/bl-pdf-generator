@@ -54,12 +54,13 @@ class ModelPDF {
     const filePath = path.join(process.cwd(), templateName);
     const template = await readFile(filePath, 'utf-8');
     const qr = await PDFHelpers.getQRCode('https://bl.is');
+    const assetsPath = `http://${process.env.HOST}:${process.env.PORT}/public/assets`;
     await this.registerTemplateHelpers();
 
     return Handlebars.compile(template)({
       ...data,
-      assetsPath: `http://${process.env.HOST}:${process.env.PORT}/public/assets`,
-      variationTables: PDFHelpers.getVariationTablesHTML(data.tables),
+      assetsPath,
+      variationTables: PDFHelpers.getVariationTablesHTML(data.tables, assetsPath),
       equipmentLists: PDFHelpers.getEquipmentHTML(data.equipment),
       extraEquipmentLists: PDFHelpers.getExtraEquipmentHTML(data.extraEquipment),
       techSpecsTable: PDFHelpers.getTechSpecsTableHTML(data.techSpecsList),

@@ -1,7 +1,7 @@
 import QRCode from 'qrcode';
 
 class PDFHelpers {
-  public static getVariationTablesHTML(tablesData: Array<Array<VariationTableRow>>) {
+  public static getVariationTablesHTML(tablesData: Array<Array<VariationTableRow>>, assetsPath: string) {
     const oilBasedCars = tablesData[0];
     const ecoCars = tablesData[1];
     let markup = '';
@@ -79,7 +79,7 @@ class PDFHelpers {
         <tr class="auto-info-table__main-row">
           <td class="auto-info-table__main-cell">
             <span class="badge eco-badge">
-              <img src="{{assetsPath}}/img/eco-badge.svg" alt="" class="badge-image">
+              <img src="${assetsPath}/img/eco-badge.svg" alt="" class="badge-image">
             </span>
             
             ${car.name}
@@ -87,10 +87,14 @@ class PDFHelpers {
           <td class="auto-info-table__main-cell"><span>${car.capacity}</span> cc</td>
           <td class="auto-info-table__main-cell">${car.fuelType}</td>
           <td class="auto-info-table__main-cell">${car.transmission}</td>
-          <td class="auto-info-table__main-cell">${car.fuelConsumptionCombined} l/100</td>
+          <td class="auto-info-table__main-cell">
+            ${car.fuelConsumptionCombined.toString().replace(/\./g, ',')} l/100
+          </td>
           <td class="auto-info-table__main-cell">${car.maxPower}</td>
           <td class="auto-info-table__main-cell">${car.range} km.</td>
-          <td class="auto-info-table__main-cell"><span>${car.price}</span> <span>kr.</span></td>
+          <td class="auto-info-table__main-cell">
+            <span>${new Intl.NumberFormat('de-DE').format(car.price)}</span> <span>kr.</span>
+          </td>
         </tr>
       `;
       });
