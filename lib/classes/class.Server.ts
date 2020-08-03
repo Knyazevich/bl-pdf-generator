@@ -3,9 +3,16 @@ import Inert from '@hapi/inert';
 import path from 'path';
 import Logger from './class.Logger';
 import ModelPDF from './class.ModelPDF';
+import Redis from './class.Redis';
 
 class Server {
   private server: Hapi.Server;
+
+  private readonly INTERNAL_SERVER_ERROR_MESSAGE = 'Internal Server Error';
+
+  private readonly REDIS_KEY_UNDEFINED_MESSAGE = 'Redis key did not provided';
+
+  private readonly SUCCESS_MESSAGE = 'Success';
 
   private readonly rootPath: string;
 
@@ -75,6 +82,88 @@ class Server {
             path: path.normalize(`${this.rootPath}/templates/`),
             listing: true,
           },
+        },
+      },
+      {
+        method: 'GET',
+        path: '/redis/{key*}',
+        handler: async (req: Hapi.Request, h: Hapi.ResponseToolkit) => {
+          try {
+            const { key } = req.params;
+
+            if (!key) {
+              return h
+                .response({
+                  statusCode: 400,
+                  error: this.REDIS_KEY_UNDEFINED_MESSAGE,
+                  message: this.REDIS_KEY_UNDEFINED_MESSAGE,
+                })
+                .code(400);
+            }
+
+            const response = await Redis.getAsync()(key);
+
+            if (response || response === null) {
+              return h
+                .response({
+                  statusCode: 200,
+                  message: this.SUCCESS_MESSAGE,
+                  data: response,
+                });
+            }
+
+            return h
+              .response({
+                statusCode: 500,
+                error: this.INTERNAL_SERVER_ERROR_MESSAGE,
+                message: this.INTERNAL_SERVER_ERROR_MESSAGE,
+              })
+              .code(500);
+          } catch (e) {
+            console.error(e);
+          }
+        },
+      },
+      {
+        method: 'POST',
+        path: '/redis/{key*}',
+        handler: async (req: Hapi.Request, h: Hapi.ResponseToolkit) => {
+          try {
+            const { key } = req.params;
+
+            // @ts-ignore
+            const value = req.payload.value;
+
+            if (!key) {
+              return h
+                .response({
+                  statusCode: 400,
+                  error: this.REDIS_KEY_UNDEFINED_MESSAGE,
+                  message: this.REDIS_KEY_UNDEFINED_MESSAGE,
+                })
+                .code(400);
+            }
+
+            const response = await Redis.setAsync()(key, JSON.stringify(value));
+
+            if (response === 'OK') {
+              return h
+                .response({
+                  statusCode: 200,
+                  message: this.SUCCESS_MESSAGE,
+                });
+            }
+
+            return h
+              .response({
+                statusCode: 500,
+                error: this.INTERNAL_SERVER_ERROR_MESSAGE,
+                message: this.INTERNAL_SERVER_ERROR_MESSAGE,
+              })
+              .code(500);
+          } catch (e) {
+            console.error(e);
+          }
         },
       },
     ]);

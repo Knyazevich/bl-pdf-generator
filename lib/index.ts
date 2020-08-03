@@ -1,12 +1,14 @@
 import FS from './classes/class.FS';
 import Logger from './classes/class.Logger';
 import Server from './classes/class.Server';
+import Redis from './classes/class.Redis';
 
 require('dotenv').config();
 
 class Main {
   public async run() {
     try {
+      Redis.createInstance();
       Main.createLogsDirectory();
       await new Server().run();
     } catch (e) {
