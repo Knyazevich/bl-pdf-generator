@@ -3,11 +3,11 @@
   "name": "mst-bl-pdf-generator",
   "author": "Pavlo Kniazevych",
   "description": "PDF generator for bl.is",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ankur20us/demo-puppeteer.git"
+    "url": "https://github.com/Knyazevich/bl-pdf-generator"
   },
   "scripts": {
     "build-ts": "tsc",
