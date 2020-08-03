@@ -1,10 +1,9 @@
 import * as fs from 'fs';
 
 class Logger {
-  public static log(level: string, data: any, showStack?: boolean): void {
+  public static log(level: string, message: any, showStack?: boolean): void {
     if (process.env.NODE_ENV === 'test') return;
 
-    const message = JSON.stringify(data);
     let colorCode = '';
     let fn: any = null;
 
@@ -30,7 +29,7 @@ class Logger {
 
     const date = new Date().toISOString();
 
-    const error = `${colorCode} ${typeof message === 'object' ? JSON.stringify(message) : message}`;
+    const error = `${colorCode} ${message}`;
     const errorWithStack = `${colorCode} ${level} : ${date} : ${message} \n ${new Error().stack} \n \n`;
 
     fs.appendFile(process.env.LOG_FILE_PATH, errorWithStack, (e) => {

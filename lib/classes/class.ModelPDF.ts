@@ -102,9 +102,9 @@ class ModelPDF {
       });
 
       await page.setContent(content);
-      // @ts-ignore
-      page.emulateMedia('print');
+      await page.emulateMediaType('print');
       await page.goto(`data:text/html,${content}`, { waitUntil: 'networkidle2' });
+
       const buffer = await page.pdf({
         format: 'A4',
         landscape: false,
