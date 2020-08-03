@@ -1,7 +1,7 @@
 interface Payload {
-  img: String,
-  modelName: String,
-  brandName: String,
+  img: string,
+  modelName: string,
+  brandName: string,
   tables: Array<Array<VariationTableRow>>,
   equipment: EquipmentLists,
   extraEquipment: Array<EquipmentList>,

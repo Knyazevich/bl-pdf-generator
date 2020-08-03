@@ -1,4 +1,4 @@
 interface EquipmentLists {
-  title: String
+  title: string
   collections: Array<EquipmentList>,
 }

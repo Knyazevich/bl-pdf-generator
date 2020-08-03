@@ -1,5 +1,5 @@
 interface ColorVariation {
-  id: Number,
-  title: String,
-  img: String|null,
+  id: number,
+  title: string,
+  img: string | null,
 }
