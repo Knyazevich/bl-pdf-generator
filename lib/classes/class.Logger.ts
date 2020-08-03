@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 
-class Logger implements ILogger {
-  public log(level: string, data: any, showStack?: boolean): void {
+class Logger {
+  public static log(level: string, data: any, showStack?: boolean): void {
     if (process.env.NODE_ENV === 'test') return;
 
     const message = JSON.stringify(data);

@@ -12,8 +12,7 @@ class FS {
         });
       }
     } catch (e) {
-      const l = new Logger();
-      l.log('error', e);
+      Logger.log('error', e);
 
       if (e.code !== 'EEXIST') {
         throw e;
@@ -27,8 +26,7 @@ class FS {
         fs.mkdirSync(directoryPath);
       }
     } catch (e) {
-      const l = new Logger();
-      l.log('error', e);
+      Logger.log('error', e);
 
       if (e.code !== 'EEXIST') {
         throw e;
@@ -47,8 +45,7 @@ class FS {
         return directory;
       });
     } catch (e) {
-      const l = new Logger();
-      l.log('error', e);
+      Logger.log('error', e);
     }
   }
 

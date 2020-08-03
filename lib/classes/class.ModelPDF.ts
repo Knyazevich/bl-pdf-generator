@@ -39,7 +39,7 @@ class ModelPDF {
         return '';
       });
     } catch (e) {
-      console.log(e);
+      Logger.log('error', e);
     }
   }
 
@@ -95,8 +95,6 @@ class ModelPDF {
       const content = await this.compileTemplate(this.TEMPLATE_PATH, data);
       const page = await this.createPage();
 
-      console.log(content);
-
       await page.setViewport({
         width: 2480,
         height: 3508,
@@ -114,12 +112,11 @@ class ModelPDF {
         printBackground: true,
       });
 
-      this.closePage();
+      await this.closePage();
 
       return buffer;
     } catch (e) {
-      const l = new Logger();
-      l.log('error', e);
+      Logger.log('error', e);
     }
   }
 }

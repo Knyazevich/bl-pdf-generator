@@ -12,8 +12,7 @@ class Main {
       Main.createLogsDirectory();
       await new Server().run();
     } catch (e) {
-      const l = new Logger();
-      l.log('error', e);
+      Logger.log('error', e);
     }
   }
 

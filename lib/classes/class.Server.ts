@@ -21,16 +21,14 @@ class Server {
   }
 
   public async run() {
-    const l = new Logger();
-
     try {
       await this.init();
       await this.setRoutes();
       await this.start();
 
-      l.log('good', 'Server started');
+      Logger.log('good', 'Server started');
     } catch (e) {
-      l.log('error', e);
+      Logger.log('error', e);
     }
   }
 
@@ -52,26 +50,34 @@ class Server {
         method: 'GET',
         path: '/modelPDF',
         handler: async (req: Hapi.Request, h: Hapi.ResponseToolkit) => {
-          const pdf = new ModelPDF();
-          const buffer = await pdf.generate(req.query);
+          try {
+            const pdf = new ModelPDF();
+            const buffer = await pdf.generate(req.query);
 
-          return h.response(buffer)
-            .type('application/pdf')
-            .encoding('utf8')
-            .header('Content-Disposition', 'attachment;filename=model.pdf');
+            return h.response(buffer)
+              .type('application/pdf')
+              .encoding('utf8')
+              .header('Content-Disposition', 'attachment;filename=model.pdf');
+          } catch (e) {
+            Logger.log('error', e);
+          }
         },
       },
       {
         method: 'POST',
         path: '/modelPDF',
         handler: async (req: Hapi.Request, h: Hapi.ResponseToolkit) => {
-          const pdf = new ModelPDF();
-          const buffer = await pdf.generate(req.payload);
+          try {
+            const pdf = new ModelPDF();
+            const buffer = await pdf.generate(req.payload);
 
-          return h.response(buffer)
-            .type('application/pdf')
-            .encoding('utf8')
-            .header('Content-Disposition', 'attachment;filename=model.pdf');
+            return h.response(buffer)
+              .type('application/pdf')
+              .encoding('utf8')
+              .header('Content-Disposition', 'attachment;filename=model.pdf');
+          } catch (e) {
+            Logger.log('error', e);
+          }
         },
       },
       {
@@ -120,7 +126,7 @@ class Server {
               })
               .code(500);
           } catch (e) {
-            console.error(e);
+            Logger.log('error', e);
           }
         },
       },
@@ -162,7 +168,7 @@ class Server {
               })
               .code(500);
           } catch (e) {
-            console.error(e);
+            Logger.log('error', e);
           }
         },
       },
@@ -170,11 +176,15 @@ class Server {
   }
 
   private async start() {
-    await this.server.register({
-      plugin: require('hapi-cors'), // eslint-disable-line
-    });
+    try {
+      await this.server.register({
+        plugin: require('hapi-cors'), // eslint-disable-line
+      });
 
-    await this.server.start();
+      await this.server.start();
+    } catch (e) {
+      Logger.log('error', e);
+    }
   }
 }
 
