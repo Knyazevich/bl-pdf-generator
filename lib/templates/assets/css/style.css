@@ -94,7 +94,7 @@ body {
 
 
 .primary-title {
-  font-family: 'TT Norms';
+  font-family: 'TT Norms', sans-serif;
   font-weight: 700;
   font-size: 87.7px;
   line-height: 83px;
@@ -107,7 +107,7 @@ body {
 }
 
 .secondary-title {
-  font-family: 'TT Norms';
+  font-family: 'TT Norms', sans-serif;
   font-weight: 700;
   font-size: 51.7px;
   line-height: 132px;
@@ -156,7 +156,7 @@ body {
 
 .hero-banner__title {
   color: #fff;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   margin: 0;
   font-size: 130.153px;
@@ -184,7 +184,7 @@ body {
 }
 
 .auto-info-table__header-title {
-  font-family: 'TT Norms';
+  font-family: 'TT Norms', sans-serif;
   text-align: center;
   color: var(--dark-black);
   font-size: 36.144px;
@@ -270,7 +270,7 @@ body {
 }
 
 .inner-footer__title {
-  font-family: 'TT Norms';
+  font-family: 'TT Norms', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 42.1673px;
@@ -447,7 +447,7 @@ body {
 
 .technical__table-category-title {
   text-align: left;
-  font-family: 'TT Norms';
+  font-family: 'TT Norms', sans-serif;
   font-weight: 700;
   font-size: 40px;
   line-height: 107px;
@@ -456,7 +456,7 @@ body {
 }
 
 .technical__table-header-title {
-  font-family: 'TT Norms';
+  font-family: 'TT Norms', sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 35px;
@@ -585,7 +585,7 @@ body {
 }
 
 .warranty__value {
-  font-family: 'TT Norms';
+  font-family: 'TT Norms', sans-serif;
   font-weight: 700;
   color: #fff;
 }
@@ -612,14 +612,14 @@ body {
 }
 
 .warranty__liability-text {
-  font-family: 'TT Norms';
+  font-family: 'TT Norms', sans-serif;
   font-weight: 700;
   font-size: 98.7815px;
   line-height: 117px;
 }
 
 .warranty__drive-text {
-  font-family: 'TT Norms';
+  font-family: 'TT Norms', sans-serif;
   font-weight: 700;
   font-size: 34.6537px;
   line-height: 41px;
@@ -630,7 +630,6 @@ body {
     margin: 0;
     padding: 0;
   }
-
 
   @page {
     size: A4;
