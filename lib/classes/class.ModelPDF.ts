@@ -61,7 +61,7 @@ class ModelPDF {
       ...data,
       assetsPath,
       variationTables: PDFHelpers.getVariationTablesHTML(data.tables, assetsPath),
-      equipmentLists: PDFHelpers.getEquipmentHTML(data.equipment),
+      equipmentLists: PDFHelpers.getEquipmentHTML(data.equipment, data.tables),
       extraEquipmentLists: PDFHelpers.getExtraEquipmentHTML(data.extraEquipment),
       techSpecsTable: PDFHelpers.getTechSpecsTableHTML(data.techSpecsList),
       colors: PDFHelpers.getColorsHTML(data.colors),

@@ -105,9 +105,13 @@ class PDFHelpers {
     return markup;
   }
 
-  public static getEquipmentHTML(equipment: EquipmentLists) {
+  public static getEquipmentHTML(equipment: EquipmentLists, tables: Array<Array<VariationTableRow>>) {
     let markup = '';
-    const mainTitle = PDFHelpers.splitModelTitle(equipment.title);
+    // Check if oil rows exists and use them, otherwise use eco-rows
+    const activeTable = tables[0].length ? tables[0] : tables[1];
+
+    // Check if picked array contains rows and use first element's title
+    const firstEquipmentTitle = activeTable.length ? this.prepareTitle(activeTable[0].name) : '';
 
     if (!equipment.collections.length) {
       return markup;
@@ -122,8 +126,8 @@ class PDFHelpers {
     markup += `
     <section class="equipment">
       <h2 class="secondary-title secondary__title--margin">
-        <span class="dark-blue">${mainTitle[0]}</span>
-        <span class="light-blue">${mainTitle[1]}</span>
+        <span class="dark-blue">Staðalbúnaður</span>
+        <span class="light-blue">${firstEquipmentTitle}</span>
       </h2>
 
       <div class="list-wrapper">
@@ -158,14 +162,18 @@ class PDFHelpers {
       return markup;
     }
 
-    extraEquipment.forEach((equipmentList) => {
-      const title = PDFHelpers.splitModelTitle(equipmentList.title);
+    const uniqueEquipments = this.getUniqueEquipmentByTitle(extraEquipment);
 
+    if (!uniqueEquipments.length) {
+      return markup;
+    }
+
+    uniqueEquipments.forEach((equipmentList) => {
       markup += `
       <section class="extra-in-intens equipment">
         <h2 class="secondary-title secondary__title--margin">
-          <span class="dark-blue">${title[0]}</span>
-          <span class="light-blue">${title[1]}</span>
+          <span class="dark-blue">Aukalega í</span>
+          <span class="light-blue">${this.prepareTitle(equipmentList.title)}</span>
         </h2>
   
         <div class="list-wrapper">
@@ -355,6 +363,21 @@ class PDFHelpers {
 
   private static prepareTitle(carTitle: string) {
     return carTitle.split('-')[0].trim();
+  }
+
+  private static getUniqueEquipmentByTitle(equipments: Array<EquipmentList>) {
+    const titles: string[] = [];
+
+    return equipments.filter((equipment) => {
+      const title = this.prepareTitle(equipment.title);
+
+      if (!titles.includes(title)) {
+        titles.push(title);
+        return true;
+      }
+
+      return false;
+    });
   }
 }
 
