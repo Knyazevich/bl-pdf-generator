@@ -19,6 +19,7 @@ class PDFHelpers {
             <th class="auto-info-table__header-title">Hestöfl</th>
             <th class="auto-info-table__header-title">Co2</th>
             <th class="auto-info-table__header-title">Verð</th>
+            <th class="auto-info-table__header-title">90% lán*</th>
           </tr>
           </thead>
         
@@ -38,6 +39,7 @@ class PDFHelpers {
             <th class="auto-info-table__header-title">Hestöfl</th>
             <th class="auto-info-table__header-title">Drægi</th>
             <th class="auto-info-table__header-title">Verð</th>
+            <th class="auto-info-table__header-title">90% lán*</th>
           </tr>
           </thead>
         
@@ -52,7 +54,7 @@ class PDFHelpers {
       oilBasedCars.forEach((car: VariationTableRow) => {
         markup += `
         <tr class="auto-info-table__main-row">
-          <td class="auto-info-table__main-cell">${car.name}</td>
+          <td class="auto-info-table__main-cell">${this.prepareTitle(car.name)}</td>
           <td class="auto-info-table__main-cell"><span>${car.capacity}</span> cc</td>
           <td class="auto-info-table__main-cell">${car.fuelType}</td>
           <td class="auto-info-table__main-cell">${car.transmission}</td>
@@ -61,9 +63,8 @@ class PDFHelpers {
           </td>
           <td class="auto-info-table__main-cell">${car.maxPower}</td>
           <td class="auto-info-table__main-cell">${car.co2}</td>
-          <td class="auto-info-table__main-cell">
-           <span>${new Intl.NumberFormat('de-DE').format(car.price)}</span> <span>kr.</span>
-          </td>
+          <td class="auto-info-table__main-cell">${car.price} <span>kr.</span></td>
+          <td class="auto-info-table__main-cell"><span>${car.loan}</span></td>
         </tr>
       `;
       });
@@ -82,7 +83,7 @@ class PDFHelpers {
               <img src="${assetsPath}/img/eco-badge.svg" alt="" class="badge-image">
             </span>
             
-            ${car.name}
+            ${this.prepareTitle(car.name)}
           </td>
           <td class="auto-info-table__main-cell"><span>${car.capacity}</span> cc</td>
           <td class="auto-info-table__main-cell">${car.fuelType}</td>
@@ -92,9 +93,8 @@ class PDFHelpers {
           </td>
           <td class="auto-info-table__main-cell">${car.maxPower}</td>
           <td class="auto-info-table__main-cell">${car.range} km.</td>
-          <td class="auto-info-table__main-cell">
-            <span>${new Intl.NumberFormat('de-DE').format(car.price)}</span> <span>kr.</span>
-          </td>
+          <td class="auto-info-table__main-cell">${car.price} <span>kr.</span></td>
+          <td class="auto-info-table__main-cell"><span>${car.loan}</span></td>
         </tr>
       `;
       });
@@ -224,8 +224,9 @@ class PDFHelpers {
     return markup;
   }
 
-  public static async getQRCode(url: string) {
+  public static async getQRCode(href: string = '') {
     try {
+      const url = `${process.env.MAIN_DOMAIN}${href}`;
       return await QRCode.toDataURL(url);
     } catch (e) {
       return '';
@@ -350,6 +351,10 @@ class PDFHelpers {
     }
 
     return result;
+  }
+
+  private static prepareTitle(carTitle: string) {
+    return carTitle.split('-')[0].trim();
   }
 }
 

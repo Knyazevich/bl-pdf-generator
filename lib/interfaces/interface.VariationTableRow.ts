@@ -5,7 +5,8 @@ interface VariationTableRow {
   transmission: string,
   fuelConsumptionCombined: number,
   maxPower: number,
-  co2: number,
-  range: number,
+  co2: number, // Oil cars only
+  range: number, // Hybrids/Electric cars only
+  loan: number,
   price: number,
 }

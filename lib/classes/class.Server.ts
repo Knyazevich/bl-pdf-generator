@@ -47,23 +47,6 @@ class Server {
 
     await this.server.route([
       {
-        method: 'GET',
-        path: '/modelPDF',
-        handler: async (req: Hapi.Request, h: Hapi.ResponseToolkit) => {
-          try {
-            const pdf = new ModelPDF();
-            const buffer = await pdf.generate(req.query);
-
-            return h.response(buffer)
-              .type('application/pdf')
-              .encoding('utf8')
-              .header('Content-Disposition', 'attachment;filename=model.pdf');
-          } catch (e) {
-            Logger.log('error', e);
-          }
-        },
-      },
-      {
         method: 'POST',
         path: '/modelPDF',
         handler: async (req: Hapi.Request, h: Hapi.ResponseToolkit) => {

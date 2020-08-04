@@ -53,7 +53,7 @@ class ModelPDF {
   public async compileTemplate(templateName: string, data: Payload) {
     const filePath = path.join(process.cwd(), templateName);
     const template = await readFile(filePath, 'utf-8');
-    const qr = await PDFHelpers.getQRCode('https://bl.is');
+    const qr = await PDFHelpers.getQRCode(data.href);
     const assetsPath = `http://${process.env.HOST}:${process.env.PORT}/public/assets`;
     await this.registerTemplateHelpers();
 
