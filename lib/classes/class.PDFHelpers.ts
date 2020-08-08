@@ -270,23 +270,25 @@ class PDFHelpers {
     }
 
     if (specs.length <= 4) {
-      markup += this.generateTable(specs, true);
+      markup += this.generateTable(specs, 0);
     } else {
       const specsChunks = this.chunks(specs, 4);
 
       specsChunks.forEach((chunk, index) => {
-        markup += this.generateTable(chunk, index === 0);
+        markup += this.generateTable(chunk, index);
       });
     }
 
     return markup;
   }
 
-  public static generateTable(specs: Array<TechSpecs>, isFirstRow: boolean) {
+  public static generateTable(specs: Array<TechSpecs>, index: number) {
     let markup = '';
+    const isFirstRow = index === 0;
 
     markup += `
-      <div class="table-container ${!isFirstRow ? 'table-container--pt' : ''}">
+      <div class="table-container ${!isFirstRow ? 'table-container--pt' : ''}"
+            style="${(!isFirstRow && index % 2 === 0) ? 'page-break-before: always;' : ''}">
         <table class="technical__table">
           <thead class="technical__table-header technical__table-main-header">
           <tr class="technical__table-main-header-row">
