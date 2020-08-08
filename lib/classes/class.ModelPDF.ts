@@ -92,8 +92,10 @@ class ModelPDF {
 
   public async generate(data: any) {
     try {
-      const content = await this.compileTemplate(this.TEMPLATE_PATH, data);
+      let content = await this.compileTemplate(this.TEMPLATE_PATH, data);
       const page = await this.createPage();
+
+      content = content.replace(/null/gm, '‒');
 
       await page.setViewport({
         width: 2480,
