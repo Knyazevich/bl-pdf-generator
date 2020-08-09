@@ -53,8 +53,14 @@ class ModelPDF {
   public async compileTemplate(templateName: string, data: Payload) {
     const filePath = path.join(process.cwd(), templateName);
     const template = await readFile(filePath, 'utf-8');
-    const qr = await PDFHelpers.getQRCode(data.href);
     const assetsPath = `http://${process.env.HOST}:${process.env.PORT}/public/assets`;
+    const footer = await PDFHelpers.getFooter({
+      href: data.href,
+      brandName: data.brandName,
+      modelName: data.modelName,
+      assetsPath,
+    });
+
     await this.registerTemplateHelpers();
 
     return Handlebars.compile(template)({
@@ -65,7 +71,7 @@ class ModelPDF {
       extraEquipmentLists: PDFHelpers.getExtraEquipmentHTML(data.extraEquipment),
       techSpecsTable: PDFHelpers.getTechSpecsTableHTML(data.techSpecsList),
       colors: PDFHelpers.getColorsHTML(data.colors),
-      qr,
+      footer,
       year: new Date().getFullYear(),
       month: PDFHelpers.getCurrentMonth(),
     });

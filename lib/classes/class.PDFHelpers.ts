@@ -395,6 +395,52 @@ class PDFHelpers {
       return false;
     });
   }
+
+  public static async getFooter(data: FooterData) {
+    const qr = await PDFHelpers.getQRCode(data.href);
+    const year = new Date().getFullYear();
+    const month = PDFHelpers.getCurrentMonth();
+
+    return `
+      <footer class="inner-footer">
+        <div class="product-info">
+          <div class="qr-code">
+            <img src="${qr}" alt="">
+          </div>
+
+          <div class="product-info__desc">
+            <h1 class="first-title inner-footer__title inner-footer__title--margin">
+              <span class="dark-blue">${data.brandName ? data.brandName.toUpperCase() : ''}</span>
+              <span class="light-blue">${data.modelName ? data.modelName.toUpperCase() : ''}</span>
+            </h1>
+            <div class="product-info__desc-text-box">
+              <p class="product-info__desc-text product-info__desc-text--margin">
+                Verðlisti ${month} ${year}
+              </p>
+
+              <p class="product-info__desc-text product-info__desc-text--margin">
+                Skannaðu þennan QR kóða til að fá meiri upplýsingar
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <address class="inner-footer__contacts">
+          <div class="inner-footer__contacts-box">
+            <h2 class="inner-footer__contact-title inner-footer__contact-title--margin">BL ehf.</h2>
+            <p class="inner-footer__contact-text inner-footer__contact-text--margin">Sævarhöfða 2 / 110 Reykjavík</p>
+            <a class="inner-footer__contact-link" href="tel:525-8000">525-8000</a>
+            <span>/</span>
+            <a class="inner-footer__contact-link" href="https://www.bl.is">www.bl.is</a>
+          </div>
+          
+          <div class="logo" style="${!data.assetsPath ? 'visibility: hidden;' : ''}">
+            <img src="${data.assetsPath}/img/logo.svg" alt="">
+          </div>
+        </address>
+      </footer>
+    `;
+  }
 }
 
 export default PDFHelpers;
