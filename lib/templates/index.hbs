@@ -12,13 +12,11 @@
 
     {{{variationTables}}}
 
-    <section class="equipment">
-      {{{equipmentLists}}}
-    </section>
+    {{{equipmentLists}}}
 
-    <section class="extra-equipment" style="page-break-before: always;">
+    <div style="page-break-after: always;">
       {{{extraEquipmentLists}}}
-    </section>
+    </div>
   </div>
 
   <footer class="inner-footer">
@@ -55,52 +53,53 @@
   </footer>
 </div>
 
-<div class="main-content">
-  <div class="content-box">
-    <!--    <section class="extra-in-intens equipment">-->
-    <!--      <h2 class="secondary-title secondary__title--margin">-->
-    <!--        <span class="dark-blue">Aukalega í</span>-->
-    <!--        <span class="light-blue">Intens</span>-->
-    <!--      </h2>-->
+{{#if extraEquipmentLists}}
+  <div class="main-content">
+    <div class="content-box">
+      <!--    <section class="extra-in-intens equipment">-->
+      <!--      <h2 class="secondary-title secondary__title--margin">-->
+      <!--        <span class="dark-blue">Aukalega í</span>-->
+      <!--        <span class="light-blue">Intens</span>-->
+      <!--      </h2>-->
 
-    <!--      <div class="list-wrapper">-->
-    <!--        <ul class="equipment__list">-->
-    <!--          <div class="list-category">-->
-    <!--            <li class="equipment__list-item">Stillanleg stemmningslýsing í innréttingu</li>-->
-    <!--            <li class="equipment__list-item">Hiti í stýri</li>-->
-    <!--            <li class="equipment__list-item">Leðurklætt stýri</li>-->
-    <!--            <li class="equipment__list-item">Leður á slitflötum</li>-->
-    <!--            <li class="equipment__list-item">Lyklalaust aðgengi</li>-->
-    <!--            <li class="equipment__list-item">Leiðsögukerfi með Íslandskorti​</li>-->
-    <!--            <li class="equipment__list-item">7" upplýsingaskjár í mælaborði</li>-->
-    <!--          </div>-->
-    <!--        </ul>-->
-    <!--      </div>-->
-    <!--    </section>-->
+      <!--      <div class="list-wrapper">-->
+      <!--        <ul class="equipment__list">-->
+      <!--          <div class="list-category">-->
+      <!--            <li class="equipment__list-item">Stillanleg stemmningslýsing í innréttingu</li>-->
+      <!--            <li class="equipment__list-item">Hiti í stýri</li>-->
+      <!--            <li class="equipment__list-item">Leðurklætt stýri</li>-->
+      <!--            <li class="equipment__list-item">Leður á slitflötum</li>-->
+      <!--            <li class="equipment__list-item">Lyklalaust aðgengi</li>-->
+      <!--            <li class="equipment__list-item">Leiðsögukerfi með Íslandskorti​</li>-->
+      <!--            <li class="equipment__list-item">7" upplýsingaskjár í mælaborði</li>-->
+      <!--          </div>-->
+      <!--        </ul>-->
+      <!--      </div>-->
+      <!--    </section>-->
 
-    <!--    <section class="extra-in-intens equipment">-->
-    <!--      <h2 class="secondary-title secondary__title--margin">-->
-    <!--        <span class="dark-blue">Aukalega í</span>-->
-    <!--        <span class="light-blue">RS útgáfu</span>-->
-    <!--      </h2>-->
+      <!--    <section class="extra-in-intens equipment">-->
+      <!--      <h2 class="secondary-title secondary__title--margin">-->
+      <!--        <span class="dark-blue">Aukalega í</span>-->
+      <!--        <span class="light-blue">RS útgáfu</span>-->
+      <!--      </h2>-->
 
-    <!--      <div class="list-wrapper">-->
-    <!--        <ul class="equipment__list">-->
-    <!--          <div class="list-category">-->
-    <!--            <li class="equipment__list-item">Eco ökuhamur</li>-->
-    <!--            <li class="equipment__list-item">Mismunandi akstursstillingar</li>-->
-    <!--            <li class="equipment__list-item">17" Álfelgur</li>-->
-    <!--            <li class="equipment__list-item">Armpúði í aftursætum</li>-->
-    <!--            <li class="equipment__list-item">ÁL Pedalar</li>-->
-    <!--            <li class="equipment__list-item">GT Innrétting</li>-->
-    <!--            <li class="equipment__list-item">Leðuráklæði</li>-->
-    <!--            <li class="equipment__list-item">Sportsæti</li>-->
-    <!--          </div>-->
-    <!--        </ul>-->
-    <!--      </div>-->
-    <!--    </section>-->
+      <!--      <div class="list-wrapper">-->
+      <!--        <ul class="equipment__list">-->
+      <!--          <div class="list-category">-->
+      <!--            <li class="equipment__list-item">Eco ökuhamur</li>-->
+      <!--            <li class="equipment__list-item">Mismunandi akstursstillingar</li>-->
+      <!--            <li class="equipment__list-item">17" Álfelgur</li>-->
+      <!--            <li class="equipment__list-item">Armpúði í aftursætum</li>-->
+      <!--            <li class="equipment__list-item">ÁL Pedalar</li>-->
+      <!--            <li class="equipment__list-item">GT Innrétting</li>-->
+      <!--            <li class="equipment__list-item">Leðuráklæði</li>-->
+      <!--            <li class="equipment__list-item">Sportsæti</li>-->
+      <!--          </div>-->
+      <!--        </ul>-->
+      <!--      </div>-->
+      <!--    </section>-->
 
-    <!--<section class="accessories">
+      <!--<section class="accessories">
       <h1 class="primary-title primary-title--margin dark-blue accessories__title">AUKAHLUTIR</h1>
       <div class="accessories__main-img-box">
         <img class="accessories__main-img" src="{{assetsPath}}/img/gallery-main-img.png"
@@ -245,45 +244,47 @@
         </div>
       </div>
     </section>-->
-  </div>
-
-  <footer class="inner-footer">
-    <div class="product-info">
-      <div class="qr-code">
-        <img src="{{{qr}}}" alt="">
-      </div>
-
-      <div class="product-info__desc">
-        <h1 class="first-title inner-footer__title inner-footer__title--margin">
-          <span class="dark-blue">{{uppercase brandName}}</span>
-          <span class="light-blue">{{uppercase modelName}}</span>
-        </h1>
-        <div class="product-info__desc-text-box">
-          <p class="product-info__desc-text product-info__desc-text--margin">Verðlisti {{capitalize month}} {{year}}</p>
-          <p class="product-info__desc-text product-info__desc-text--margin">Skannaðu þennan QR kóða til að fá meiri
-            upplýsingar</p>
-        </div>
-      </div>
     </div>
 
-    <address class="inner-footer__contacts">
-      <div class="inner-footer__contacts-box">
-        <h2 class="inner-footer__contact-title inner-footer__contact-title--margin">BL ehf.</h2>
-        <p class="inner-footer__contact-text inner-footer__contact-text--margin">Sævarhöfða 2 / 110 Reykjavík</p>
-        <a class="inner-footer__contact-link" href="tel:525-8000">525-8000</a>
-        <span>/</span>
-        <a class="inner-footer__contact-link" href="https://www.bl.is">www.bl.is</a>
+    <footer class="inner-footer">
+      <div class="product-info">
+        <div class="qr-code">
+          <img src="{{{qr}}}" alt="">
+        </div>
+
+        <div class="product-info__desc">
+          <h1 class="first-title inner-footer__title inner-footer__title--margin">
+            <span class="dark-blue">{{uppercase brandName}}</span>
+            <span class="light-blue">{{uppercase modelName}}</span>
+          </h1>
+          <div class="product-info__desc-text-box">
+            <p class="product-info__desc-text product-info__desc-text--margin">Verðlisti {{capitalize
+              month}} {{year}}</p>
+            <p class="product-info__desc-text product-info__desc-text--margin">Skannaðu þennan QR kóða til að fá meiri
+              upplýsingar</p>
+          </div>
+        </div>
       </div>
-      <div class="logo">
-        <img src="{{assetsPath}}/img/logo.svg" alt="">
-      </div>
-    </address>
-  </footer>
-</div>
+
+      <address class="inner-footer__contacts">
+        <div class="inner-footer__contacts-box">
+          <h2 class="inner-footer__contact-title inner-footer__contact-title--margin">BL ehf.</h2>
+          <p class="inner-footer__contact-text inner-footer__contact-text--margin">Sævarhöfða 2 / 110 Reykjavík</p>
+          <a class="inner-footer__contact-link" href="tel:525-8000">525-8000</a>
+          <span>/</span>
+          <a class="inner-footer__contact-link" href="https://www.bl.is">www.bl.is</a>
+        </div>
+        <div class="logo">
+          <img src="{{assetsPath}}/img/logo.svg" alt="">
+        </div>
+      </address>
+    </footer>
+  </div>
+{{/if}}
 
 <div class="main-content">
   <div class="content-box">
-    <section class="technical technical-information">
+    <section class="technical technical-information" style="page-break-before: always; page-break-after: always;">
       <h1 class="primary-title primary-title--margin dark-blue">Tækniupplýsingar</h1>
 
       {{{techSpecsTable}}}

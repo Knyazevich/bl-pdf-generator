@@ -77,17 +77,25 @@ class ModelPDF {
    * @return {!Promise<!Puppeteer.Page>}
    */
   private async createPage() {
-    this.browser = await puppeteer.launch({
-      headless: true,
-      devtools: false,
-      args: ['--no-sandbox', '--disable-setuid-sandbox'],
-    });
+    try {
+      this.browser = await puppeteer.launch({
+        headless: true,
+        devtools: false,
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      });
 
-    return this.browser.newPage();
+      return this.browser.newPage();
+    } catch (e) {
+      Logger.log('error', e);
+    }
   }
 
   private async closePage() {
-    await this.browser.close();
+    try {
+      await this.browser.close();
+    } catch (e) {
+      Logger.log('error', e);
+    }
   }
 
   public async generate(data: any) {

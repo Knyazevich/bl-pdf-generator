@@ -144,6 +144,12 @@ class PDFHelpers {
       markup += '</div>';
     });
 
+    markup += `
+        </ul>
+      </div>
+    </section>
+    `;
+
     return markup;
   }
 
@@ -168,18 +174,20 @@ class PDFHelpers {
       return markup;
     }
 
+    markup += '<section style="page-break-before: always; page-break-after: always;">';
+
     uniqueEquipments.forEach((equipmentList) => {
       markup += `
-      <section class="extra-in-intens equipment">
+      <article class="extra-in-intens equipment">
         <h2 class="secondary-title secondary__title--margin">
           <span class="dark-blue">Aukalega í</span>
           <span class="light-blue">${this.prepareTitle(equipmentList.title)}</span>
         </h2>
-  
+
         <div class="list-wrapper">
           <ul class="equipment__list">
             <div class="list-category">
-          `;
+      `;
 
       equipmentList.list.forEach((listElement) => {
         markup += `<li class="equipment__list-item">${listElement}</li>`;
@@ -189,9 +197,11 @@ class PDFHelpers {
             </div>
           </ul>
         </div>
-    </section>
+      </article>
     `;
     });
+
+    markup += '</section>';
 
     return markup;
   }
@@ -210,8 +220,9 @@ class PDFHelpers {
     }
 
     markup += `
-     <section class="colors">
+     <section class="colors" style="page-break-before: always;">
         <h1 class="primary-title primary-title--margin dark-blue">Litir í boði</h1>
+        
         <ul class="car-colors car-colors-list">
     `;
 
@@ -227,7 +238,10 @@ class PDFHelpers {
       `;
     });
 
-    markup += '</ul></section>';
+    markup += `
+      </ul>
+    </section>
+    `;
 
     return markup;
   }
