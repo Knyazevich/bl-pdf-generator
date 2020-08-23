@@ -133,7 +133,7 @@ class Server {
                 .code(400);
             }
 
-            const response = await Redis.setAsync()(key, JSON.stringify(value));
+            const response = await Redis.setAsync()(key, JSON.stringify(value), 'EX', Redis.ONE_DAY_AS_MILLISECONDS);
 
             if (response === 'OK') {
               return h

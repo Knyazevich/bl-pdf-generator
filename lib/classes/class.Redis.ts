@@ -4,6 +4,8 @@ import { promisify } from 'util';
 class Redis {
   private static instance: redis.RedisClient | null;
 
+  public static ONE_DAY_AS_MILLISECONDS: 86400;
+
   public static createInstance() {
     const client = redis.createClient();
     Redis.instance = client;
