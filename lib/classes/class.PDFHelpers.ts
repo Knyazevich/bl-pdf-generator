@@ -409,10 +409,8 @@ class PDFHelpers {
           </div>
 
           <div class="product-info__desc">
-            <h1 class="first-title inner-footer__title inner-footer__title--margin">
-              <span class="dark-blue">${data.brandName ? data.brandName.toUpperCase() : ''}</span>
-              <span class="light-blue">${data.modelName ? data.modelName.toUpperCase() : ''}</span>
-            </h1>
+            ${this.formatFooterTitle(data.brandName, data.modelName)}
+            
             <div class="product-info__desc-text-box">
               <p class="product-info__desc-text product-info__desc-text--margin">
                 Verðlisti ${month} ${year}
@@ -439,6 +437,30 @@ class PDFHelpers {
           </div>
         </address>
       </footer>
+    `;
+  }
+
+  public static formatFooterTitle(brandName: string, modelName: string) {
+    let isNew = false;
+
+    if (!brandName || !modelName) {
+      return '';
+    }
+
+    if (new RegExp(/NÝR/ig).test(modelName)) {
+      modelName = modelName.replace(new RegExp(/NÝR/ig), '');
+      isNew = true;
+    }
+
+    return `
+    <h1 class="first-title inner-footer__title inner-footer__title--margin">
+      <span class="dark-blue">
+        ${isNew ? 'NÝR' : ''}
+        ${brandName.toUpperCase()}
+      </span>
+      
+      <span class="light-blue">${modelName.toUpperCase()}</span>
+    </h1>
     `;
   }
 }
