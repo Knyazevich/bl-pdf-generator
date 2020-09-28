@@ -28,7 +28,7 @@ class Server {
 
       Logger.log('good', 'Server started');
     } catch (e) {
-      Logger.log('error', e);
+      Logger.log('error', `Error while initializing HTTP server on the high level method: ${e}`);
     }
   }
 
@@ -59,7 +59,7 @@ class Server {
               .encoding('utf8')
               .header('Content-Disposition', 'attachment;filename=model.pdf');
           } catch (e) {
-            Logger.log('error', e);
+            Logger.log('error', `Error in the POST /modelPDF route: ${e}`);
           }
         },
       },
@@ -109,7 +109,7 @@ class Server {
               })
               .code(500);
           } catch (e) {
-            Logger.log('error', e);
+            Logger.log('error', `Error in the GET /redis/{key*} route: ${e}`);
           }
         },
       },
@@ -151,7 +151,7 @@ class Server {
               })
               .code(500);
           } catch (e) {
-            Logger.log('error', e);
+            Logger.log('error', `Error in the POST /redis/{key*} route: ${e}`);
           }
         },
       },
@@ -166,7 +166,7 @@ class Server {
 
       await this.server.start();
     } catch (e) {
-      Logger.log('error', e);
+      Logger.log('error', `Error while starting HTTP server: ${e}`);
     }
   }
 }

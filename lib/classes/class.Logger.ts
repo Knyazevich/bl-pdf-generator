@@ -4,7 +4,7 @@ class Logger {
   public static log(level: string, message: any, showStack?: boolean): void {
     if (process.env.NODE_ENV === 'test') return;
 
-    let colorCode = '';
+    let colorCode: string;
     let fn: any = null;
 
     /* eslint-disable no-console */

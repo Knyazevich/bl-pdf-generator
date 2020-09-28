@@ -39,7 +39,7 @@ class ModelPDF {
         return '';
       });
     } catch (e) {
-      Logger.log('error', e);
+      Logger.log('error', `Error while registering template helpers: ${e}`);
     }
   }
 
@@ -92,7 +92,7 @@ class ModelPDF {
 
       return this.browser.newPage();
     } catch (e) {
-      Logger.log('error', e);
+      Logger.log('error', `Error while creating Puppeteer page: ${e}`);
     }
   }
 
@@ -100,7 +100,7 @@ class ModelPDF {
     try {
       await this.browser.close();
     } catch (e) {
-      Logger.log('error', e);
+      Logger.log('error', `Error while closing Puppeteer page: ${e}`);
     }
   }
 
@@ -132,7 +132,7 @@ class ModelPDF {
 
       return buffer;
     } catch (e) {
-      Logger.log('error', e);
+      Logger.log('error', `Error while generating PDF: ${e}`);
     }
   }
 }
