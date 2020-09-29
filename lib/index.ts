@@ -11,7 +11,7 @@ class Main {
       Redis.createInstance();
       Main.createLogsDirectory();
 
-      await new Server().run();
+      new Server();
     } catch (e) {
       Logger.log('error', `Error while initializing on the high level method: ${e}`);
     }

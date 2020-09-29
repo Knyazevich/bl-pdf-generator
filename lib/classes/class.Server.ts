@@ -17,19 +17,21 @@ class Server {
   private readonly rootPath: string;
 
   constructor() {
-    this.rootPath = path.dirname(require.main.filename);
-  }
-
-  public async run() {
     try {
-      await this.init();
-      await this.setRoutes();
-      await this.start();
+      this.rootPath = path.dirname(require.main.filename);
+
+      this.run();
 
       Logger.log('good', 'Server started');
     } catch (e) {
       Logger.log('error', `Error while initializing HTTP server on the high level method: ${e}`);
     }
+  }
+
+  private async run() {
+    await this.init();
+    await this.setRoutes();
+    await this.start();
   }
 
   private async init() {
