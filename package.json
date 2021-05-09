@@ -32,7 +32,7 @@
     "dotenv": "^8.2.0",
     "eslint": "^7.6.0",
     "fs-extra": "^9.0.1",
-    "handlebars": "^4.7.6",
+    "handlebars": "^4.7.7",
     "hapi-cors": "^1.0.3",
     "hapi-pulse": "^3.0.0",
     "puppeteer": "^5.2.1",
